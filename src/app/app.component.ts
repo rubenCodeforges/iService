@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
+import './app.component.less';
 
 @Component({
     selector: 'app',
-    template: '<h1>hello</h1>'
+    template: require('./app.component.html')
 })
 export class AppComponent {
     constructor() {

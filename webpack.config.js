@@ -13,8 +13,8 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.ts$/, loader: 'ts'},
-            {test: /\.css$/, loader: ExtractTextWebpackPlugin.extract('css!autoprefixer-loader')},
-            {test: /\.less$/, loader: ExtractTextWebpackPlugin.extract('css!autoprefixer-loader!less')},
+            {test: /\.css$/, loader: ExtractTextWebpackPlugin.extract('css!postcss-loader')},
+            {test: /\.less$/, loader: ExtractTextWebpackPlugin.extract('css!postcss-loader!less')},
             {test: /\.html$/, loader: 'html', exclude: /index\.html$/},
             {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: fontFileLoader},
             {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: fontFileLoader},
@@ -22,7 +22,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.ts']
+        extensions: ['', '.js', '.ts'],
+        modulesDirectories: [
+            './node_modules',
+            './lib'
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
