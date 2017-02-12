@@ -2,24 +2,16 @@ import {Injectable} from "@angular/core";
 import {DatabaseAdapter} from "../../common/database/DatabaseAdapter";
 import {LocalStorageManager} from "../../common/database/minimongo/LocalStorageManager";
 import {Observable} from "rxjs";
+import {Http} from "@angular/http";
 
 @Injectable()
 export class VehicleResource {
     private manager: LocalStorageManager;
     private collection: string = 'vehicles';
 
-    constructor() {
+    constructor(private http: Http) {
         this.manager = DatabaseAdapter.get();
         this.manager.addCollection(this.collection);
-        this.manager.put({
-            collection: this.collection,
-            documents: {
-                vendor: 'VW',
-                model: 'Golf4',
-                vin: '5424234252',
-                clientId: 3
-            }
-        })
     }
 
     public findAll(): Observable<VehicleDocument[]> {
@@ -34,12 +26,16 @@ export class VehicleResource {
             documents: vehicle
         });
     }
+
+    public getMockedVendor(): Observable<any> {
+        return this.http.get('/mocks/makes.json').map(res => res.json() || {})
+    }
 }
 
 export interface VehicleDocument {
     _id: string;
     vendorNiceName: string;
-    model: VehicleModel;
+    model: VehicleType;
     vin: string;
     clientId: string;
 }
@@ -48,10 +44,10 @@ export interface VehicleVendor {
     id: string;
     name: string;
     niceName: string;
-    models: VehicleModel[];
+    models: VehicleType[];
 }
 
-export interface VehicleModel {
+export interface VehicleType {
     id: string;
     name: string;
     niceName: string;

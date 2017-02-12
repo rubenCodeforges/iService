@@ -1,5 +1,5 @@
 import {VehicleOverviewComponent} from "./overview/vehicle-overview.component";
-import {VehicleCreateComponent} from "./create/vehicle-create.component";
+import {VehicleCreateComponent} from "./create/VehicleCreateComponent";
 import {VehicleDetailComponent} from "./details/vehicle-detail.component";
 import {ExtendedRoutes} from "../app.routes";
 
