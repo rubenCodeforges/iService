@@ -1,0 +1,35 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="#">
+                    <i class="fa fa-car"></i>
+                    Vehicles
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li *ngFor="let route of routes">
+                        <a *ngIf="routeHasLink(route)" routerLink="{{ route.path }}" routerLinkActive="active">
+                            {{ route.linkName }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Clients
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="">Add Client</a>
+                    </li>
+                    <li>
+                        <a href="">Clients list</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
