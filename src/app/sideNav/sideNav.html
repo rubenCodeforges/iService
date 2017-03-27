@@ -5,11 +5,11 @@
                 <li *ngIf="navigationItem.enabled">
                     <a href="#">
                         <i class="fa fa-car"></i>
-                        Vehicles
+                        {{navigationItem.title}}
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li *ngFor="let route of navigationItem">
+                        <li *ngFor="let route of navigationItem.routes">
                             <a *ngIf="routeHasLink(route)" routerLink="{{ route.path }}" routerLinkActive="active">
                                 {{ route.linkName }}
                             </a>
@@ -17,22 +17,6 @@
                     </ul>
                 </li>
             </ng-container>
-
-            <!--<li>-->
-            <!--<a href="#">-->
-            <!--<i class="fa fa-users" aria-hidden="true"></i>-->
-            <!--Clients-->
-            <!--<i class="fa fa-caret-down"></i>-->
-            <!--</a>-->
-            <!--<ul class="nav nav-second-level">-->
-            <!--<li>-->
-            <!--<a href="">Add Client</a>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--<a href="">Clients list</a>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</li>-->
         </ul>
     </div>
 </div>

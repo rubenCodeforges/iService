@@ -11,9 +11,12 @@ import {OrderModel} from "./services/OrderModel";
 import {OrderResource} from "./_internal/OrderResource";
 import {ItemResource} from "./_internal/ItemResource";
 import {ItemModel} from "./services/ItemModel";
+import {RouterModule} from "@angular/router";
+import {PartsManagerRoutes} from "./PartsManagerRoutes";
 
 @NgModule({
     imports: [
+        RouterModule.forChild(PartsManagerRoutes.routes),
         FormsModule,
         CommonModule,
         HttpModule,
