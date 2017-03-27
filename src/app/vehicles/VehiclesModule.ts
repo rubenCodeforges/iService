@@ -13,7 +13,7 @@ import {VehicleModel} from "./service/VehicleModel";
 
 @NgModule({
     imports: [
-        RouterModule.forChild(VehiclesRoutes),
+        RouterModule.forChild(VehiclesRoutes.routes),
         FormsModule,
         CommonModule,
         HttpModule,
