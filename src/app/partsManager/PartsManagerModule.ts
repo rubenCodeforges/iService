@@ -8,8 +8,8 @@ import {OrderDetailComponent} from "./order/detail/OrderDetailComponent";
 import {ItemOverviewComponent} from "./item/overview/ItemOverviewComponent";
 import {ItemDetailComponent} from "./item/detail/ItemDetailComponent";
 import {OrderModel} from "./services/OrderModel";
-import {OrderResource} from "./services/OrderResource";
-import {ItemResource} from "./services/ItemResource";
+import {OrderResource} from "./_internal/OrderResource";
+import {ItemResource} from "./_internal/ItemResource";
 import {ItemModel} from "./services/ItemModel";
 
 @NgModule({

@@ -1,8 +1,8 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
-import {vehiclesRoutes} from "./vehicles.routes";
-import {VehicleOverviewComponent} from "./overview/vehicle-overview.component";
-import {VehicleDetailComponent} from "./details/vehicle-detail.component";
+import {VehiclesRoutes} from "./VehiclesRoutes";
+import {VehicleOverviewComponent} from "./overview/VehicleOverviewComponent";
+import {VehicleDetailComponent} from "./details/VehicleDetailComponent";
 import {VehicleCreateComponent} from "./create/VehicleCreateComponent";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
@@ -13,7 +13,7 @@ import {VehicleModel} from "./service/VehicleModel";
 
 @NgModule({
     imports: [
-        RouterModule.forChild(vehiclesRoutes),
+        RouterModule.forChild(VehiclesRoutes),
         FormsModule,
         CommonModule,
         HttpModule,

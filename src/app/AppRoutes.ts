@@ -1,7 +1,7 @@
 import {Route} from "@angular/router";
-import {DashboardComponent} from "./dashboard/dashboard.component";
+import {DashboardComponent} from "./dashboard/DashboardComponent";
 
-export const appRoutes: ExtendedRoutes = [
+export const AppRoutes: ExtendedRoutes = [
     {path: 'dashboard', component: DashboardComponent},
 ];
 

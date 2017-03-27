@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
     selector: 'vehicle-detail',
-    template: require('./vehicle-detail.component.html')
+    template: require('./vehicleDetail.html')
 })
 export class VehicleDetailComponent {
     constructor() {

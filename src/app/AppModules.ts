@@ -1,13 +1,13 @@
 import {NgModule} from "@angular/core";
-import {AppComponent} from "./app.component";
+import {AppComponent} from "./AppComponent";
 import {BrowserModule} from "@angular/platform-browser";
-import {SideNavComponent} from "./sideNav/side-nav.component";
-import {ToolbarComponent} from "./toolbar/toolbar.component";
+import {SideNavComponent} from "./sideNav/SideNavComponent";
+import {ToolBarComponent} from "./toolbar/ToolBarComponent";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
-import {appRoutes} from "./app.routes";
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {VehiclesModule} from "./vehicles/vehicles.module";
+import {AppRoutes} from "./AppRoutes";
+import {DashboardComponent} from "./dashboard/DashboardComponent";
+import {VehiclesModule} from "./vehicles/VehiclesModule";
 import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
@@ -16,14 +16,14 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(AppRoutes),
     VehiclesModule
   ],
   declarations: [
     AppComponent,
     SideNavComponent,
     DashboardComponent,
-    ToolbarComponent
+    ToolBarComponent
   ],
   exports: [
     BrowserModule,

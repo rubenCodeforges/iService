@@ -1,9 +1,9 @@
-import {VehicleOverviewComponent} from "./overview/vehicle-overview.component";
+import {VehicleOverviewComponent} from "./overview/VehicleOverviewComponent";
 import {VehicleCreateComponent} from "./create/VehicleCreateComponent";
-import {VehicleDetailComponent} from "./details/vehicle-detail.component";
-import {ExtendedRoutes} from "../app.routes";
+import {VehicleDetailComponent} from "./details/VehicleDetailComponent";
+import {ExtendedRoutes} from "../AppRoutes";
 
-export const vehiclesRoutes: ExtendedRoutes = [
+export const VehiclesRoutes: ExtendedRoutes = [
     {path: 'vehicles', component: VehicleOverviewComponent, linkName: "Vehicles Overview"},
     {path: 'vehicles/create', component: VehicleCreateComponent, linkName: "Create Vehicle"},
     {path: 'vehicles/:id', component: VehicleDetailComponent},
