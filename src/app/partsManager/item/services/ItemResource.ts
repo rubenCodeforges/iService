@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
-import {Api} from "../../config/Api";
-import {CrudResource} from "../../infrastructure/crud/CrudResource";
-import {Item} from "../item/Item";
-import {HttpService} from "../../infrastructure/http/HttpService";
 import {Observable} from "rxjs";
+import {CrudResource} from "../../../infrastructure/crud/CrudResource";
+import {Api} from "../../../config/Api";
+import {HttpService} from "../../../infrastructure/http/HttpService";
+import {Item} from "../Item";
 
 @Injectable()
 export class ItemResource implements CrudResource {
