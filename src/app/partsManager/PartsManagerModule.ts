@@ -9,8 +9,8 @@ import {ItemOverviewComponent} from "./item/overview/ItemOverviewComponent";
 import {ItemDetailComponent} from "./item/detail/ItemDetailComponent";
 import {OrderModel} from "./order/services/OrderModel";
 import {OrderResource} from "./order/services/OrderResource";
-import {ItemResource} from "./services/ItemResource";
-import {ItemModel} from "./services/ItemModel";
+import {ItemResource} from "./item/services/ItemResource";
+import {ItemModel} from "./item/services/ItemModel";
 import {RouterModule} from "@angular/router";
 import {PartsManagerRoutes} from "./PartsManagerRoutes";
 
