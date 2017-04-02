@@ -5,13 +5,13 @@
                 <li *ngIf="navigationItem.enabled">
                     <a href="#">
                         <i class="fa fa-car"></i>
-                        {{navigationItem.title}}
+                        {{navigationItem.title | translate}}
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="nav nav-second-level">
                         <li *ngFor="let route of navigationItem.routes">
                             <a *ngIf="routeHasLink(route)" routerLink="{{ route.path }}" routerLinkActive="active">
-                                {{ route.linkName }}
+                                {{ route.linkName | translate}}
                             </a>
                         </li>
                     </ul>

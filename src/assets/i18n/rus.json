@@ -1,3 +1,8 @@
 {
-  "HOME.HEADER.TITLE": "Главная страница"
+  "HOME.HEADER.TITLE": "Главная",
+  "PARTS_MANAGER.NAVIGATION.TITLE": "Менеджер заказов",
+  "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW": "Список товаров",
+  "PARTS_MANAGER.NAVIGATION.ITEM_CREATE": "Добавить товар",
+  "PARTS_MANAGER.NAVIGATION.ORDERS_OVERVIEW": "Список заказов",
+  "PARTS_MANAGER.NAVIGATION.ORDER_CREATE": "Создать заказ"
 }
