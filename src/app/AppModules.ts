@@ -12,7 +12,13 @@ import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
 import {Http} from "@angular/http";
+import {PartsManagerModule} from "./partsManager/PartsManagerModule";
+import {HttpService} from "./infrastructure/http/HttpService";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     imports: [
@@ -22,13 +28,12 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
-                useFactory: (http: Http) => {
-                    return new TranslateHttpLoader(http);
-                },
+                useFactory: HttpLoaderFactory,
                 deps: [Http]
             }
         }),
         NgbModule.forRoot(),
+        PartsManagerModule,
         VehiclesModule
     ],
     declarations: [
@@ -45,7 +50,11 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
         RouterModule
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy}
+        HttpService,
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        }
     ],
     bootstrap: [AppComponent]
 })

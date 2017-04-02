@@ -13,6 +13,7 @@ import {ItemResource} from "./item/services/ItemResource";
 import {ItemModel} from "./item/services/ItemModel";
 import {RouterModule} from "@angular/router";
 import {PartsManagerRoutes} from "./PartsManagerRoutes";
+import {OrderCreateModal} from "./order/modals/OrderCreateModal";
 
 @NgModule({
     imports: [
@@ -25,14 +26,18 @@ import {PartsManagerRoutes} from "./PartsManagerRoutes";
     declarations: [
         OrderOverviewComponent,
         OrderDetailComponent,
+        OrderCreateModal,
         ItemOverviewComponent,
-        ItemDetailComponent,
+        ItemDetailComponent
     ],
     providers: [
         OrderModel,
         OrderResource,
         ItemResource,
-        ItemModel,
+        ItemModel
+    ],
+    entryComponents: [
+        OrderCreateModal
     ]
 })
 export class PartsManagerModule {
