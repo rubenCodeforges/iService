@@ -2,7 +2,6 @@ import {Response, RequestOptionsArgs, Http} from "@angular/http";
 import {HttpExceptionHandler} from "./HttpExceptionHandler";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
-import {ErrorObservable} from "rxjs/observable/ErrorObservable";
 
 @Injectable()
 export class HttpService {
@@ -23,10 +22,7 @@ export class HttpService {
             .catch(HttpExceptionHandler.handleError)
     }
 
-    private static toJsonResponse(response: Response): JSON | ErrorObservable {
-        if (!response) {
-            return Observable.throw(HttpExceptionHandler.HTTP_NO_JSON_RESPONSE);
-        }
+    private static toJsonResponse(response: Response): JSON {
         let body = response.json();
         return body || {};
     }

@@ -6,16 +6,8 @@ export class HttpExceptionHandler {
 
     public static readonly HTTP_NO_JSON_RESPONSE: string = "The http response is not of type JSON";
 
-    public static handleError(error: Response | any): ErrorObservable {
-        let errMsg: string;
-
-        if (error instanceof Response) {
-            let body = error.json() || '';
-            let err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-        } else {
-            errMsg = error.message ? error.message : error.toString();
-        }
+    public static handleError(response: Response): ErrorObservable {
+        let errMsg: string = `${response.status} - ${response.statusText}`;
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
