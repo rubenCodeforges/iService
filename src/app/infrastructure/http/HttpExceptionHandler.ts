@@ -3,6 +3,9 @@ import {Observable} from "rxjs";
 import {ErrorObservable} from "rxjs/observable/ErrorObservable";
 
 export class HttpExceptionHandler {
+
+    public static readonly HTTP_NO_JSON_RESPONSE: string = "The http response is not of type JSON";
+
     public static handleError(error: Response | any): ErrorObservable {
         let errMsg: string;
 
