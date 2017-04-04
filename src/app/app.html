@@ -1,13 +1,11 @@
 <div id="wrapper">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <toolbar></toolbar>
-    <side-nav></side-nav>
-  </nav>
-
-  <!-- Page Content -->
-  <div id="page-wrapper">
-    <router-outlet></router-outlet>
+  <toolbar></toolbar>
+  <div class="container-fluid">
+    <div class="row">
+      <side-nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded"></side-nav>
+      <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   </div>
 </div>

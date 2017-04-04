@@ -4,7 +4,7 @@ import {TranslateService} from "@ngx-translate/core";
 @Component({
     selector: 'app-root',
     templateUrl: 'app.html',
-    styleUrls: ['app.less']
+    styles: [require('./app.less')]
 })
 export class AppComponent {
     constructor(translate: TranslateService) {

@@ -2,7 +2,6 @@ import {NgModule} from "@angular/core";
 import {AppComponent} from "./AppComponent";
 import {BrowserModule} from "@angular/platform-browser";
 import {SideNavComponent} from "./sideNav/SideNavComponent";
-import {ToolBarComponent} from "./toolbar/ToolBarComponent";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {AppRoutes} from "./AppRoutes";
@@ -15,6 +14,7 @@ import {Http} from "@angular/http";
 import {PartsManagerModule} from "./partsManager/PartsManagerModule";
 import {HttpService} from "./infrastructure/http/HttpService";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {NavbarComponent} from "./navbar/NavbarComponent";
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -40,7 +40,7 @@ export function HttpLoaderFactory(http: Http) {
         AppComponent,
         SideNavComponent,
         DashboardComponent,
-        ToolBarComponent
+        NavbarComponent
     ],
     exports: [
         BrowserModule,

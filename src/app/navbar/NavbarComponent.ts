@@ -3,9 +3,9 @@ import {TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'toolbar',
-    template: require('./toolBar.html')
+    template: require('./navbar.html')
 })
-export class ToolBarComponent {
+export class NavbarComponent {
     constructor(private translate: TranslateService) {
     };
 
