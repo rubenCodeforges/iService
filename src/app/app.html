@@ -1,11 +1,24 @@
-<div id="wrapper">
-  <toolbar></toolbar>
-  <div class="container-fluid">
-    <div class="row">
-      <side-nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded"></side-nav>
-      <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
+<div class="main-wrapper">
+  <div class="app" id="app">
+    <navbar></navbar>
+
+    <side-nav></side-nav>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <article class="content dashboard-page">
+      <router-outlet></router-outlet>
+    </article>
+
+    <footer class="footer">
+      <div class="footer-block buttons">
+
+      </div>
+      <div class="footer-block author">
+        <ul>
+          <li> created by <a href="https://github.com/modularcode">ModularCode</a></li>
+          <li><a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a></li>
+        </ul>
+      </div>
+    </footer>
   </div>
 </div>

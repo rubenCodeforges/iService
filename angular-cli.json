@@ -23,7 +23,8 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.slim.js",
         "../node_modules/metismenu/dist/metisMenu.js",
-        "../lib/sb-admin-2.js"
+        "../lib/modular-admin/vendor.js",
+        "../lib/modular-admin/app.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
