@@ -5,7 +5,25 @@
     </button>
 </div>
 <div class="modal-body">
-
+    <div class="card card-block sameheight-item" style="height: 724px;">
+        <div class="title-block">
+            <h3 class="title"> Boxed Inputs </h3>
+        </div>
+        <form>
+            <div class="form-group">
+                <label class="control-label">Input Text</label>
+                <input type="text" class="form-control boxed">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Input Password</label>
+                <input type="password" class="form-control boxed">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Placeholder Input</label>
+                <input type="text" class="form-control boxed" placeholder="Placeholder text">
+            </div>
+        </form>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="onClose()">Close</button>
