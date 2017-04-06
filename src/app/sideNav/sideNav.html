@@ -1,93 +1,30 @@
-<!--<nav>-->
-<!--<ul class="nav nav-pills flex-column" id="side-menu">-->
-<!--<ng-container *ngFor="let navigationItem of navigationItems">-->
-<!--<li class="nav-item" *ngIf="navigationItem.enabled">-->
-<!--<a href="#" class="nav-link">-->
-<!--<i class="fa fa-car"></i>-->
-<!--{{navigationItem.title | translate}}-->
-<!--<i class="fa fa-caret-down"></i>-->
-<!--</a>-->
-<!--<ul class="nav nav-second-level">-->
-<!--<li class="nav-item" *ngFor="let route of navigationItem.routes">-->
-<!--<a class="nav-link"-->
-<!--*ngIf="routeHasLink(route)" routerLink="{{ route.path }}"-->
-<!--routerLinkActive="active">-->
-<!--{{ route.linkName | translate}}-->
-<!--</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</li>-->
-<!--</ng-container>-->
-<!--</ul>-->
-<!--<ul class="nav nav-pills flex-column">-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Reports</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Analytics</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Export</a>-->
-<!--</li>-->
-<!--</ul>-->
-
-<!--<ul class="nav nav-pills flex-column">-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Nav item</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Nav item again</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">One more nav</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Another nav item</a>-->
-<!--</li>-->
-<!--</ul>-->
-
-<!--<ul class="nav nav-pills flex-column">-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Nav item again</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">One more nav</a>-->
-<!--</li>-->
-<!--<li class="nav-item">-->
-<!--<a class="nav-link" href="#">Another nav item</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</nav>-->
-
-
 <aside class="sidebar">
     <div class="sidebar-container">
         <div class="sidebar-header">
             <div class="brand">
-                <div class="logo"><span class="l l1"></span> <span class="l l2"></span> <span
-                        class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span></div>
-                Modular Admin
+                IService
             </div>
         </div>
         <nav class="menu">
             <ul class="nav metismenu" id="sidebar-menu">
-                <li class="active">
-                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
-                </li>
-                <li>
-                    <a href=""> <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i> </a>
-                    <ul>
-                        <li><a href="items-list.html">
-                            Items List
-                        </a></li>
-                        <li><a href="item-editor.html">
-                            Item Editor
-                        </a></li>
-                    </ul>
-                </li>
+                <ng-container *ngFor="let navigationItem of navigationItems">
+                    <li *ngIf="navigationItem.enabled" routerLinkActive="active">
+                        <a href="#" class="nav-link">
+                            <i class="fa fa-car"></i>
+                            {{navigationItem.title | translate}}
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul>
+                            <ng-container *ngFor="let route of navigationItem.routes">
+                                <li *ngIf="routeHasLink(route)">
+                                    <a routerLink="{{ route.path }}">
+                                        {{ route.linkName | translate}}
+                                    </a>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ng-container>
             </ul>
         </nav>
     </div>
