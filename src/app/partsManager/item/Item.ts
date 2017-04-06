@@ -1,5 +1,10 @@
 export class Item {
-    id: string;
-    title: string = "";
-    description: string = "";
+    public id: string;
+    public title: string = "";
+    public description: string = "";
+
+    constructor() {
+        this.title = "";
+        this.description = "";
+    }
 }

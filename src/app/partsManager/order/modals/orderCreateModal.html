@@ -9,7 +9,7 @@
         <form>
             <div class="form-group">
                 <label class="control-label" translate>PARTS_MANAGER.ORDER.CREATE.TITLE</label>
-                <input type="text" class="form-control boxed">
+                <input type="text" name="orderTitle" [(ngModel)]="order.title" class="form-control boxed">
             </div>
             <div class="form-group">
                 <label class="control-label" translate>PARTS_MANAGER.ORDER.CREATE.ITEM.ADD</label>
@@ -19,9 +19,14 @@
                 </div>
             </div>
             <section class="section">
-                <h4 translate>PARTS_MANAGER.ORDER.CREATE.ITEM.LIST</h4>
-                <ol *ngFor="let item of items">
-                    <li>{{item.title}}</li>
+                <label translate>PARTS_MANAGER.ORDER.CREATE.ITEM.LIST</label>
+                <ol>
+                    <li *ngFor="let item of order.items">
+                        {{item.title}}
+                        <a href="" class="text-danger" (click)="$event.preventDefault(); deleteItem(item)">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </li>
                 </ol>
             </section>
         </form>

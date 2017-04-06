@@ -1,7 +1,15 @@
+import {Item} from "../item/Item";
+
 export class Order {
-    id: string;
-    title: string;
-    status: OrderStatus;
+    public id: string;
+    public title: string;
+    public status: OrderStatus;
+    public items: Item[];
+
+    constructor() {
+        this.status = OrderStatus.NEW;
+        this.items = [];
+    }
 }
 
 export enum OrderStatus{
