@@ -14,6 +14,7 @@ import {ItemModel} from "./item/services/ItemModel";
 import {RouterModule} from "@angular/router";
 import {PartsManagerRoutes} from "./PartsManagerRoutes";
 import {OrderCreateModal} from "./order/modals/OrderCreateModal";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import {OrderCreateModal} from "./order/modals/OrderCreateModal";
         FormsModule,
         CommonModule,
         HttpModule,
+        TranslateModule.forChild(),
         NgbModule
     ],
     declarations: [

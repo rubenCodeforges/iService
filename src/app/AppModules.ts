@@ -45,7 +45,6 @@ export function HttpLoaderFactory(http: Http) {
     exports: [
         BrowserModule,
         FormsModule,
-        TranslateModule,
         NgbModule,
         RouterModule
     ],

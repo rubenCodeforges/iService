@@ -1,3 +1,4 @@
+
 <header class="header">
     <div class="header-block header-block-collapse hidden-lg-up">
         <button class="collapse-btn" id="sidebar-collapse-btn">
@@ -7,10 +8,10 @@
     <div class="header-block header-block-nav">
         <ul class="navbar-nav">
             <li>
-                <a href="#" (click)="changeLanguage('eng')">ENG</a>
+                <a href="#" (click)="$event.preventDefault(); changeLanguage('eng')">ENG</a>
             </li>
             <li>
-                <a href="#" (click)="changeLanguage('rus')">РУС</a>
+                <a href="#" (click)="$event.preventDefault(); changeLanguage('rus')">РУС</a>
             </li>
         </ul>
     </div>
