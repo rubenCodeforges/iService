@@ -38,7 +38,32 @@
                         <span translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.STATE</span>
                     </div>
                 </div>
-                <div class="item-col item-col-header fixed item-col-actions-dropdown"></div>
+                <!--<div class="item-col item-col-header fixed item-col-actions-dropdown"></div>-->
+            </div>
+        </li>
+        <li class="item" *ngFor="let order of orders">
+            <div class="item-row">
+                <div class="item-col fixed item-col-check">
+                    <label class="item-check">
+                        <input type="checkbox" class="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="item-col">
+                    <span>
+                        {{order.title}}
+                    </span>
+                </div>
+                <div class="item-col">
+                      <span>
+                         {{order.createdAt | date: 'shortDate'}}
+                      </span>
+                </div>
+                <div class="item-col">
+                     <span translate>
+                         {{"ORDER.STATE." + order.state}}
+                     </span>
+                </div>
             </div>
         </li>
     </ul>

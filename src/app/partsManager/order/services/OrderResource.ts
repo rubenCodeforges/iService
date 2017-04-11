@@ -21,7 +21,8 @@ export class OrderResource implements CrudResource {
         return this.httpService.get<Order>(this.URL + "/" + orderId);
     }
 
-    create() {
+    create(order): Observable<void> {
+        return this.httpService.post(this.URL, order);
     }
 
     update() {

@@ -12,4 +12,8 @@ export class OrderModel {
     getAllOrders(): Observable<Order[]> {
         return this.orderResource.findAll();
     }
+
+    createOrder(order: Order): Observable<void> {
+        return this.orderResource.create(order);
+    }
 }

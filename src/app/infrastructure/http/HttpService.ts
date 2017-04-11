@@ -1,4 +1,4 @@
-import {Response, RequestOptionsArgs, Http} from "@angular/http";
+import {Http, RequestOptionsArgs, Response} from "@angular/http";
 import {HttpExceptionHandler} from "./HttpExceptionHandler";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
@@ -22,9 +22,12 @@ export class HttpService {
             .catch(HttpExceptionHandler.handleError)
     }
 
-    private static toJsonResponse(response: Response): JSON {
-        let body = response.json();
-        return body || {};
+    private static toJsonResponse(response: Response): JSON | number {
+        try {
+            return response.json();
+        } catch (e) {
+            return response.status;
+        }
     }
 
 }

@@ -11,4 +11,12 @@ export class ItemModel {
     getAllItems(): Observable<Item[]> {
         return this.itemResource.findAll();
     }
+
+    createItem(item: Item): Observable<Item> {
+        return this.itemResource.create(item);
+    }
+
+    deleteItem(itemId: string): Observable<void> {
+        return this.itemResource.delete(itemId);
+    }
 }

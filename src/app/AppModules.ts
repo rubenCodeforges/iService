@@ -5,11 +5,10 @@ import {SideNavComponent} from "./sideNav/SideNavComponent";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {AppRoutes} from "./AppRoutes";
-import {DashboardComponent} from "./dashboard/DashboardComponent";
 import {VehiclesModule} from "./vehicles/VehiclesModule";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {Http} from "@angular/http";
 import {PartsManagerModule} from "./partsManager/PartsManagerModule";
 import {HttpService} from "./infrastructure/http/HttpService";
@@ -39,7 +38,6 @@ export function HttpLoaderFactory(http: Http) {
     declarations: [
         AppComponent,
         SideNavComponent,
-        DashboardComponent,
         NavbarComponent
     ],
     exports: [

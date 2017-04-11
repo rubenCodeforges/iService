@@ -21,6 +21,7 @@
                     FORM.VALIDATION.FIELD.REQUIRED
                 </span>
             </div>
+
             <div class="form-group">
                 <label class="control-label" translate>PARTS_MANAGER.ORDER.CREATE.ITEM.ADD</label>
                 <div class="input-group">
@@ -28,7 +29,12 @@
                            name="itemTitle"
                            class="form-control boxed"
                            [(ngModel)]="newItem.title">
-                    <button class="btn btn-primary btn-sm no-margin" (click)="addItem()">Add</button>
+                    <button class="btn btn-primary btn-sm no-margin"
+                            type="button"
+                            (click)="addItem()"
+                            translate>
+                        FORM.BUTTON.ADD
+                    </button>
                 </div>
             </div>
             <section class="section">

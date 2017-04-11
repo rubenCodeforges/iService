@@ -21,12 +21,14 @@ export class ItemResource implements CrudResource {
         return this.httpService.get<Item>(this.URL + "/" + itemId);
     }
 
-    create() {
+    create(item: Item): Observable<Item> {
+        return this.httpService.post(this.URL, item);
     }
 
     update() {
     }
 
-    delete() {
+    delete(itemId: string): Observable<any> {
+        return this.httpService.get(`${this.URL}/${itemId}/delete`);
     }
 }
