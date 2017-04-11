@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {HttpModule} from "@angular/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
@@ -13,13 +13,14 @@ import {ItemResource} from "./item/services/ItemResource";
 import {ItemModel} from "./item/services/ItemModel";
 import {RouterModule} from "@angular/router";
 import {PartsManagerRoutes} from "./PartsManagerRoutes";
-import {OrderCreateModal} from "./order/modals/OrderCreateModal";
+import {OrderCreateModal} from "./order/create/OrderCreateModal";
 import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     imports: [
         RouterModule.forChild(PartsManagerRoutes.routes),
         FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         HttpModule,
         TranslateModule.forChild(),

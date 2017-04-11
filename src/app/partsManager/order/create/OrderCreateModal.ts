@@ -3,6 +3,7 @@ import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {Item} from "../../item/Item";
 import * as _ from "lodash";
 import {Order} from "../Order";
+import {FormGroup, FormControl} from "@angular/forms";
 
 @Component({
     selector: 'order-create-modal',
@@ -15,8 +16,13 @@ export class OrderCreateModal {
     constructor(private activeModal: NgbActiveModal) {
     }
 
-    public onSubmit() {
-        console.log(this.order);
+    //TODO: needs to be reusable
+    public onSubmit(form: FormGroup) {
+        if (!form.valid) {
+            form.controls['orderTitle'].markAsTouched(true);
+            return;
+        }
+        console.log("form valid");
     }
 
     public onClose() {
@@ -33,5 +39,12 @@ export class OrderCreateModal {
 
     public deleteItem(item: Item) {
         _.remove(this.order.items, (i) => i == item);
+    }
+
+    public hasError(formControl: FormControl, errorType: string = "required"): boolean {
+        if (!formControl) {
+            return;
+        }
+        return formControl.hasError(errorType) && formControl.touched;
     }
 }

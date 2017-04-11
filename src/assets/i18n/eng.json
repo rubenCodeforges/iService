@@ -1,6 +1,7 @@
 {
   "FORM.BUTTON.SUBMIT": "Submit",
   "FORM.BUTTON.CANCEL": "Cancel",
+  "FORM.VALIDATION.FIELD.REQUIRED": "This field is required",
   "HOME.HEADER.TITLE": "This is the home page",
   "PARTS_MANAGER.NAVIGATION.TITLE": "Orders manager",
   "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW": "Items overview",

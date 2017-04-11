@@ -1,6 +1,7 @@
 {
   "FORM.BUTTON.SUBMIT": "Отправить",
   "FORM.BUTTON.CANCEL": "Отменить",
+  "FORM.VALIDATION.FIELD.REQUIRED": "Это поле необходимо заполнить",
   "HOME.HEADER.TITLE": "Главная",
   "PARTS_MANAGER.NAVIGATION.TITLE": "Менеджер заказов",
   "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW": "Список товаров",
