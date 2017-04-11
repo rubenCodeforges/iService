@@ -1,6 +1,7 @@
 import {Item} from "../Item";
 import {ItemModel} from "../services/ItemModel";
 import {Component} from "@angular/core";
+import * as _ from "lodash";
 
 @Component({
     selector: 'item-overview',
@@ -11,7 +12,11 @@ export class ItemOverviewComponent {
 
     constructor(private itemModel: ItemModel) {
         this.itemModel.getAllItems().subscribe((response) => {
-            this.items = response;
+            this.items = _.reverse(response);
         })
+    }
+
+    public openModal() {
+
     }
 }
