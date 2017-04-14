@@ -4,6 +4,8 @@ export class Item {
     public title: string;
     public description: string;
     public orders: Order[];
+    public images: string[];
+    public price: string;
 
     constructor() {
         this.title = "";
