@@ -13,6 +13,10 @@ export class OrderModel {
         return this.orderResource.findAll();
     }
 
+    getOrder(id: string): Observable<Order> {
+        return this.orderResource.findById(id);
+    }
+
     createOrder(order: Order): Observable<void> {
         return this.orderResource.create(order);
     }

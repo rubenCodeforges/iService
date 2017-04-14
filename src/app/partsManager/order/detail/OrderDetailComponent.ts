@@ -5,4 +5,5 @@ import {Component} from "@angular/core";
     template: require('./orderDetail.html')
 })
 export class OrderDetailComponent {
+
 }

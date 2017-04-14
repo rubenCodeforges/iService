@@ -8,7 +8,8 @@ export class HttpExceptionHandler {
 
     public static handleError(response: Response): ErrorObservable {
         let errMsg: string = `${response.status} - ${response.statusText}`;
+        let serverResponse: string = response.statusText == "OK" ? response.json() : {};
         console.error(errMsg);
-        return Observable.throw(errMsg);
+        return Observable.throw({message: errMsg, code: response.status, serverMessage: serverResponse["message"]});
     }
 }
