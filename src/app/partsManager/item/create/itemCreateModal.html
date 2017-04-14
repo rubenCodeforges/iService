@@ -1,7 +1,10 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="modal-header">
-        <h4 class="modal-title" translate>PARTS_MANAGER.ORDER.CREATE.FROM_TITLE</h4>
-        <button type="button" class="close" aria-label="Close" (click)="onClose()">
+        <h4 class="modal-title" translate>PARTS_MANAGER.ITEM.CREATE.FORM_TITLE</h4>
+        <button type="button"
+                class="close"
+                aria-label="Close"
+                (click)="onClose()">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -9,28 +12,66 @@
     <div class="modal-body">
         <div class="card card-block sameheight-item">
             <div class="form-group required">
-                <label class="control-label" translate>PARTS_MANAGER.ORDER.CREATE.TITLE</label>
+                <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.TITLE</label>
                 <input type="text"
-                       name="orderTitle"
-                       [(ngModel)]="order.title"
+                       name="itemTitle"
+                       [(ngModel)]="item.title"
                        class="form-control boxed"
                        required>
-                <span *ngIf="hasError(form.controls['orderTitle'])"
+                <span *ngIf="hasError(form.controls['itemTitle'])"
                       class="has-error"
                       translate>
                     FORM.VALIDATION.FIELD.REQUIRED
                 </span>
             </div>
 
-            <div class="form-group">
-                <label class="control-label" translate>PARTS_MANAGER.ORDER.CREATE.ITEM.ADD</label>
-                <div class="input-group">
-                    <input type="text"
-                           name="itemTitle"
-                           class="form-control boxed"
-                           [(ngModel)]="newItem.title">
-                </div>
+            <div class="form-group required">
+                <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.DESCRIPTION</label>
+                <input type="text"
+                       name="itemDescription"
+                       [(ngModel)]="item.description"
+                       class="form-control boxed"
+                       required>
+                <span *ngIf="hasError(form.controls['itemDescription'])"
+                      class="has-error"
+                      translate>
+                    FORM.VALIDATION.FIELD.REQUIRED
+                </span>
             </div>
+
+            <div class="form-group required">
+                <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.IMAGE</label>
+                <input type="text"
+                       name="itemImage"
+                       [(ngModel)]="item.image"
+                       class="form-control boxed">
+            </div>
+
+            <div class="form-group required">
+                <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.CURRENCY</label>
+                <select name="itemCurrency"
+                        class="form-control form-control-md"
+                        [(ngModel)]="item.currency">
+                    <option *ngFor="let currency of availableCurrencies" [ngValue]="currency">
+                        {{currency}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group required">
+                <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.PRICE</label>
+                <input type="text"
+                       name="itemPrice"
+                       [(ngModel)]="item.price"
+                       class="form-control boxed"
+                       required>
+                <span *ngIf="hasError(form.controls['itemPrice'])"
+                      class="has-error"
+                      translate>
+                    FORM.VALIDATION.FIELD.REQUIRED
+                </span>
+            </div>
+
         </div>
     </div>
     <div class="modal-footer">

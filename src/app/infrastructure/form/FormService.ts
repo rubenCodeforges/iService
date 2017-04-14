@@ -9,7 +9,7 @@ export class FormService {
         return formControl.hasError(errorType) && formControl.touched;
     }
 
-    public static markFormControllsTouched(form: FormGroup) {
+    public static markFormControlsTouched(form: FormGroup) {
         _.each(form.controls, (control: FormControl) => {
             control.markAsTouched(true);
         });

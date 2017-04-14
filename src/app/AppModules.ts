@@ -14,6 +14,7 @@ import {PartsManagerModule} from "./partsManager/PartsManagerModule";
 import {HttpService} from "./infrastructure/http/HttpService";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {NavbarComponent} from "./navbar/NavbarComponent";
+import {AppCommonModule} from "./common/AppCommonModule";
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         }),
         NgbModule.forRoot(),
+        AppCommonModule,
         PartsManagerModule,
         VehiclesModule
     ],

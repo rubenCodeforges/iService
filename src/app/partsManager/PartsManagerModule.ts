@@ -15,6 +15,7 @@ import {RouterModule} from "@angular/router";
 import {PartsManagerRoutes} from "./PartsManagerRoutes";
 import {OrderCreateModal} from "./order/create/OrderCreateModal";
 import {TranslateModule} from "@ngx-translate/core";
+import {ItemCreateModal} from "./item/create/ItemCreateModal";
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import {TranslateModule} from "@ngx-translate/core";
         OrderOverviewComponent,
         OrderDetailComponent,
         OrderCreateModal,
+        ItemCreateModal,
         ItemOverviewComponent,
         ItemDetailComponent
     ],
@@ -40,7 +42,8 @@ import {TranslateModule} from "@ngx-translate/core";
         ItemModel
     ],
     entryComponents: [
-        OrderCreateModal
+        OrderCreateModal,
+        ItemCreateModal
     ]
 })
 export class PartsManagerModule {

@@ -24,10 +24,10 @@ export class OrderCreateModal {
 
     public onSubmit(form: FormGroup) {
         if (form.invalid) {
-            FormService.markFormControllsTouched(form);
+            FormService.markFormControlsTouched(form);
             return;
         }
-        this.orderModel.createOrder(this.order).subscribe((response) => {
+        this.orderModel.createOrder(this.order).subscribe(() => {
             this.onClose();
         });
     }
