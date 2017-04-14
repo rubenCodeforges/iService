@@ -21,10 +21,10 @@ export class OrderCreateModal {
                 private orderModel: OrderModel) {
     }
 
-    //TODO: needs to be reusable
+
     public onSubmit(form: FormGroup) {
-        if (!form.valid) {
-            form.controls['orderTitle'].markAsTouched(true);
+        if (form.invalid) {
+            FormService.markFormControllsTouched(form);
             return;
         }
         this.orderModel.createOrder(this.order).subscribe((response) => {

@@ -11,6 +11,10 @@ import {HttpModule} from "@angular/http";
 import {CommonModule} from "@angular/common";
 import {VehicleModel} from "./service/VehicleModel";
 
+/**
+ * TODO: Rework
+ * @Deprecated Whole module will be rebuild
+ */
 @NgModule({
     imports: [
         RouterModule.forChild(VehiclesRoutes.routes),

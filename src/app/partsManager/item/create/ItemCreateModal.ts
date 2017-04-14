@@ -18,10 +18,9 @@ export class ItemCreateModal {
                 private itemModel: ItemModel) {
     }
 
-    //TODO: needs to be reusable
     public onSubmit(form: FormGroup) {
         if (!form.valid) {
-            form.controls['orderTitle'].markAsTouched(true);
+            FormService.markFormControllsTouched(form);
             return;
         }
         this.itemModel.createItem(this.item).subscribe(() => {
