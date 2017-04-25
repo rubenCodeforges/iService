@@ -8,7 +8,6 @@ export class Order {
     public items: Item[];
 
     constructor() {
-        this.state = OrderState.NEW;
         this.items = [];
     }
 }
