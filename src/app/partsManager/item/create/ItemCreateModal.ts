@@ -23,10 +23,10 @@ export class ItemCreateModal {
             FormService.markFormControlsTouched(form);
             return;
         }
-        console.log(this.item);
-        // this.itemModel.createItem(this.item).subscribe(() => {
-        //     this.onClose();
-        // });
+
+        this.itemModel.createItem(this.item).subscribe(() => {
+            this.onClose();
+        });
     }
 
     public onClose() {

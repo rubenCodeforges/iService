@@ -40,14 +40,14 @@
                     </label>
                 </div>
                 <div class="item-col fixed item-col-img md">
-                    <a href="item-editor.html">
+                    <a href="">
                         <div class="item-img rounded"
                              [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
                         </div>
                     </a>
                 </div>
                 <div class="item-col">
-                    <a [routerLink]="'items/' + item.id">
+                    <a [routerLink]="[item.id]">
                         <h4 class="item-title">
                             {{item.title}}
                         </h4>
