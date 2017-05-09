@@ -25,7 +25,8 @@ export class ItemResource implements CrudResource {
         return this.httpService.post(this.URL, item);
     }
 
-    update() {
+    update(item: Item): Observable<void> {
+        return this.httpService.put(this.URL, item);
     }
 
     delete(itemId: string): Observable<any> {

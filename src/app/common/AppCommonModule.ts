@@ -3,6 +3,8 @@ import {CurrencyService} from "./currency/CurrencyService";
 import {RouterModule} from "@angular/router";
 import {AppCommonRoutes} from "./AppCommonRoutes";
 import {ErrorPageComponent} from "./errorPages/ErrorPageComponent";
+import {ImageResource} from "./media/ImageResource";
+import {MediaService} from "./media/MediaService";
 
 @NgModule({
     imports: [
@@ -13,7 +15,9 @@ import {ErrorPageComponent} from "./errorPages/ErrorPageComponent";
     ],
     exports: [],
     providers: [
-        CurrencyService
+        CurrencyService,
+        ImageResource,
+        MediaService
     ]
 })
 

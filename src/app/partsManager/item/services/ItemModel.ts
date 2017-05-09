@@ -25,6 +25,10 @@ export class ItemModel implements Resolve<Item> {
         return this.itemResource.create(item);
     }
 
+    updateItem(item: Item): Observable<void> {
+        return this.itemResource.update(item);
+    }
+
     deleteItem(itemId: string): Observable<void> {
         return this.itemResource.delete(itemId);
     }

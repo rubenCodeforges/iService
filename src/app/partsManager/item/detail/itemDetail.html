@@ -10,27 +10,34 @@
     </div>
 </div>
 
-<form name="item" #form="ngForm">
+<form name="item" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="card card-block">
         <div class="form-group row">
-            <label class="col-sm-2 form-control-label text-xs-right">
-                Title:
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.TITLE
             </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control boxed" name="itemTitle" [(ngModel)]="item.title">
+                <input type="text"
+                       class="form-control boxed"
+                       name="itemTitle"
+                       [(ngModel)]="item.title">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 form-control-label text-xs-right">
-                price:
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.PRICE
             </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control boxed" name="itemPrice" [(ngModel)]="item.price">
+                <input type="text"
+                       class="form-control boxed"
+                       name="itemPrice"
+                       [(ngModel)]="item.price">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 form-control-label text-xs-right"
-                   translate>PARTS_MANAGER.ITEM.CREATE.CURRENCY</label>
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.CURRENCY
+            </label>
             <div class="col-sm-10">
                 <select name="itemCurrency"
                         class="c-select form-control boxed"
@@ -42,8 +49,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 form-control-label text-xs-right">
-                description:
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.DESCRIPTION
             </label>
             <div class="col-sm-10">
                 <textarea class="form-control"
@@ -62,16 +69,19 @@
                     <div class="images-container">
                         <div class="image-container">
                             <div class="image-container new">
-                                <div class="image" [ngStyle]="{'background-image': image.url}"></div>
+                                <div class="image" [ngStyle]="{'background-image': 'url('+image.imageUrl+')'}"></div>
                             </div>
                         </div>
                     </div>
                 </ng-container>
-                <input type="file">
+                <input name="imageFile"
+                       type="file"
+                       accept=".jpg,.png,.jpeg"
+                       (change)="onFileSelect($event)">
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-10 col-sm-offset-2 text-right">
                 <button type="submit" class="btn btn-primary">
                     Submit
                 </button>
