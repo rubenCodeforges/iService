@@ -57,7 +57,6 @@ export class OrderCreateModal {
     }
 
     public addItem() {
-        console.log(this.selectedItem);
         if (!this.itemTitle) {
             return;
         }

@@ -50,9 +50,11 @@
                     </label>
                 </div>
                 <div class="item-col">
-                    <span>
-                        {{order.title}}
-                    </span>
+                    <a [routerLink]="[order.id]">
+                        <span>
+                            {{order.title}}
+                        </span>
+                    </a>
                 </div>
                 <div class="item-col">
                       <span>
