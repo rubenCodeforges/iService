@@ -4,6 +4,7 @@ import {CrudResource} from "../../../infrastructure/crud/CrudResource";
 import {Api} from "../../../config/Api";
 import {HttpService} from "../../../infrastructure/http/HttpService";
 import {Item} from "../Item";
+import {RequestOptions, URLSearchParams} from "@angular/http";
 
 @Injectable()
 export class ItemResource implements CrudResource {
@@ -13,12 +14,22 @@ export class ItemResource implements CrudResource {
 
     }
 
-    findAll(): Observable<Item[]> {
-        return this.httpService.get<Item[]>(this.URL);
+    findAll(term?: string): Observable<Item[]> {
+        let options: RequestOptions = new RequestOptions();
+
+
+        if (term) {
+            let params: URLSearchParams = new URLSearchParams();
+            options.params = params;
+
+            params.set('search', term);
+        }
+
+        return this.httpService.get(this.URL, options);
     }
 
     findById(itemId: string): Observable<Item> {
-        return this.httpService.get<Item>(this.URL + "/" + itemId);
+        return this.httpService.get(this.URL + "/" + itemId);
     }
 
     create(item: Item): Observable<Item> {

@@ -28,7 +28,11 @@
                     <input type="text"
                            name="itemTitle"
                            class="form-control boxed"
-                           [(ngModel)]="newItem.title">
+                           [ngbTypeahead]="searchForItemTitle"
+                           [inputFormatter]="getItemTitle"
+                           [resultFormatter]="getItemTitle"
+                           (selectItem)="onItemSelect($event)"
+                           [(ngModel)]="itemTitle">
                     <button class="btn btn-primary btn-sm no-margin"
                             type="button"
                             (click)="addItem()"

@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {ItemResource} from "./ItemResource";
 import {Item} from "../Item";
 import {Observable} from "rxjs";
-import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 
 @Injectable()
 export class ItemModel implements Resolve<Item> {
@@ -17,8 +17,8 @@ export class ItemModel implements Resolve<Item> {
         return this.itemResource.findById(id);
     }
 
-    getAllItems(): Observable<Item[]> {
-        return this.itemResource.findAll();
+    getAllItems(term?: string): Observable<Item[]> {
+        return this.itemResource.findAll(term);
     }
 
     createItem(item: Item): Observable<Item> {
