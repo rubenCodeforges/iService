@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {OrderModel} from "../services/OrderModel";
 import {ActivatedRoute} from "@angular/router";
-import {Order} from "../Order";
+import {Order, OrderState} from "../Order";
 
 @Component({
     selector: 'order-detail',
@@ -13,6 +13,38 @@ export class OrderDetailComponent {
     constructor(private route: ActivatedRoute,
                 private orderModel: OrderModel) {
         this.onRouteChange();
+    }
+
+    public updateOrderState(close: boolean = false) {
+        if (this.order.state == OrderState.NEW) {
+            this.order.state = OrderState.PAYED;
+        } else if (this.order.state == OrderState.PAYED) {
+            this.order.state = OrderState.PROCESSED;
+        } else if (this.order.state == OrderState.PROCESSED) {
+            this.order.state = OrderState.SEND;
+        } else if (this.order.state == OrderState.SEND) {
+            this.order.state = OrderState.CLOSED;
+        }
+        if (close) {
+            this.order.state = OrderState.CLOSED;
+        }
+        this.orderModel.updateOrder(this.order).subscribe(order => this.order = order);
+    }
+
+    public getOrderActionButtonTranslationKey(): string {
+        if (this.order.state == OrderState.NEW) {
+            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.PAY';
+        } else if (this.order.state == OrderState.PAYED) {
+            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.PROCESS';
+        } else if (this.order.state == OrderState.PROCESSED) {
+            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.SEND';
+        } else if (this.order.state == OrderState.SEND) {
+            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE';
+        }
+    }
+
+    public isOrderClosed(): boolean {
+        return this.order.state == OrderState.CLOSED;
     }
 
     private onRouteChange() {

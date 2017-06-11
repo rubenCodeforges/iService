@@ -4,8 +4,20 @@
         <span class="sparkline bar" data-type="bar"></span>
     </h3>
     <span class="text-right float-right">
-        <button class="btn btn-sm btn-primary">Set order payed</button>
-        <button class="btn btn-sm btn-danger">Close order</button>
+        <button *ngIf="!isOrderClosed()"
+                class="btn btn-sm btn-primary"
+                (click)="updateOrderState()">
+            {{getOrderActionButtonTranslationKey() | translate}}
+        </button>
+        <button *ngIf="!isOrderClosed()"
+                class="btn btn-sm btn-danger"
+                (click)="updateOrderState(true)"
+                translate>
+            PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE
+        </button>
+        <span *ngIf="isOrderClosed()" translate>
+            ORDER.STATE.CLOSED
+        </span>
     </span>
 </div>
 

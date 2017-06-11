@@ -21,11 +21,12 @@ export class OrderResource implements CrudResource {
         return this.httpService.get<Order>(this.URL + "/" + orderId);
     }
 
-    create(order): Observable<void> {
+    create(order: Order): Observable<void> {
         return this.httpService.post(this.URL, order);
     }
 
-    update() {
+    update(order: Order): Observable<Order> {
+        return this.httpService.put(this.URL, order);
     }
 
     delete() {

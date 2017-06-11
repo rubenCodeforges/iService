@@ -9,15 +9,19 @@ export class OrderModel {
     constructor(private orderResource: OrderResource) {
     }
 
-    getAllOrders(): Observable<Order[]> {
+    public getAllOrders(): Observable<Order[]> {
         return this.orderResource.findAll();
     }
 
-    getOrder(id: string): Observable<Order> {
+    public getOrder(id: string): Observable<Order> {
         return this.orderResource.findById(id);
     }
 
-    createOrder(order: Order): Observable<void> {
+    public createOrder(order: Order): Observable<void> {
         return this.orderResource.create(order);
+    }
+
+    public updateOrder(order: Order): Observable<Order> {
+        return this.orderResource.update(order);
     }
 }
