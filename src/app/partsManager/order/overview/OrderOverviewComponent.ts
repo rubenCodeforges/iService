@@ -7,7 +7,7 @@ import * as _ from "lodash";
 
 @Component({
     selector: 'order-overview',
-    template: require('./orderOverview.html')
+    templateUrl: './orderOverview.html'
 })
 export class OrderOverviewComponent {
     public orders: Order[] = [];

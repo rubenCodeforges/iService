@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
-    template: require('./errorPage.html')
+    templateUrl: './errorPage.html'
 })
 export class ErrorPageComponent {
     public errorCode: string;

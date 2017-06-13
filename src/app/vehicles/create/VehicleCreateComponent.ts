@@ -1,10 +1,10 @@
 import {Component} from "@angular/core";
-import { VehicleDocument, VehicleVendor, VehicleType} from "../_internal/VehicleResource";
+import {VehicleDocument, VehicleType, VehicleVendor} from "../_internal/VehicleResource";
 import {VehicleModel} from "../service/VehicleModel";
 
 @Component({
     selector: 'vehicle-create',
-    template: require('./VehicleCreate.html')
+    templateUrl: './VehicleCreate.html'
 })
 export class VehicleCreateComponent {
     public model: VehicleDocument = <VehicleDocument>{};

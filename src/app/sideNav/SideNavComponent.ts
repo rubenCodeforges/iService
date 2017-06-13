@@ -5,8 +5,8 @@ import {ExtendedRoute, ExtendedRoutes} from "../infrastructure/routes/ExtendedRo
 
 @Component({
     selector: 'side-nav',
-    template: require('./sideNav.html'),
-    styles: [require('./sideNav.less')]
+    templateUrl: './sideNav.html',
+    styleUrls: ['./sideNav.less']
 })
 export class SideNavComponent {
     public navigationItems: ExtendedRoutes[] = SideNavConfig.RegisteredNavigationRoutes;

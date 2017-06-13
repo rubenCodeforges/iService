@@ -3,7 +3,7 @@ import {Item} from "../../Item";
 
 @Component({
     selector: "item-list",
-    template: require("./ItemList.html")
+    templateUrl: "./ItemList.html"
 })
 export class ItemListComponent {
     @Input() items: Item[];

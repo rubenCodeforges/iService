@@ -12,7 +12,7 @@ import * as _ from "lodash";
 
 @Component({
     selector: "item-detail",
-    template: require('./itemDetail.html')
+    templateUrl: './itemDetail.html'
 })
 export class ItemDetailComponent extends AbstractFormComponent {
     public item: Item;

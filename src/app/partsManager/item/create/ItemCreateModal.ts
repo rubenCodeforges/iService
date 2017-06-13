@@ -9,7 +9,7 @@ import {AbstractFormComponent} from "../../../infrastructure/form/AbstractFormCo
 
 @Component({
     selector: 'order-create-modal',
-    template: require('./itemCreateModal.html')
+    templateUrl: './itemCreateModal.html'
 })
 export class ItemCreateModal extends AbstractFormComponent {
     public item: Item = new Item();
@@ -25,7 +25,6 @@ export class ItemCreateModal extends AbstractFormComponent {
             FormService.markFormControlsTouched(form);
             return;
         }
-
         this.itemModel.createItem(this.item).subscribe(() => {
             this.onClose();
         });

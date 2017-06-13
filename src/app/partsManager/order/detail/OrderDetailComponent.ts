@@ -5,7 +5,7 @@ import {Order, OrderState} from "../Order";
 
 @Component({
     selector: 'order-detail',
-    template: require('./orderDetail.html')
+    templateUrl: './orderDetail.html'
 })
 export class OrderDetailComponent {
     public order: Order = <Order> {};

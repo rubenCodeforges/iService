@@ -7,7 +7,7 @@ import {ItemCreateModal} from "../create/ItemCreateModal";
 
 @Component({
     selector: 'item-overview',
-    template: require('./itemOverview.html')
+    templateUrl: './itemOverview.html'
 })
 export class ItemOverviewComponent {
     public items: Item[] = [];

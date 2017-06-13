@@ -11,7 +11,7 @@ import {Observable} from "rxjs";
 
 @Component({
     selector: 'order-create-modal',
-    template: require('./orderCreateModal.html')
+    templateUrl: './orderCreateModal.html'
 })
 export class OrderCreateModal {
     public order: Order = new Order();

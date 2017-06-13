@@ -3,7 +3,7 @@ import {TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'navbar',
-    template: require('./navbar.html')
+    templateUrl: './navbar.html'
 })
 export class NavbarComponent {
     constructor(private translate: TranslateService) {

@@ -5,7 +5,6 @@ import {SideNavComponent} from "./sideNav/SideNavComponent";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {AppRoutes} from "./AppRoutes";
-import {VehiclesModule} from "./vehicles/VehiclesModule";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
@@ -34,8 +33,7 @@ export function HttpLoaderFactory(http: Http) {
         }),
         NgbModule.forRoot(),
         AppCommonModule,
-        PartsManagerModule,
-        VehiclesModule
+        PartsManagerModule
     ],
     declarations: [
         AppComponent,
