@@ -17,7 +17,7 @@
                         <ul>
                             <ng-container *ngFor="let route of navigationItem.routes">
                                 <li *ngIf="routeHasLink(route)">
-                                    <a routerLink="{{ route.path }}">
+                                    <a class="side-nav-item" routerLink="{{ route.path }}">
                                         {{ route.linkName | translate}}
                                     </a>
                                 </li>

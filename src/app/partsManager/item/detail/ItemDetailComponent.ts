@@ -42,6 +42,9 @@ export class ItemDetailComponent extends AbstractFormComponent {
         }
     }
 
+    public getImageUrlList(): string[] {
+        return this.model.getImageUrlList(this.item);
+    }
 
     public onFileSelect($event: Event) {
         let file = $event.target['files'][0];

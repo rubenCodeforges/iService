@@ -3,6 +3,8 @@ import {ItemResource} from "./ItemResource";
 import {Item} from "../Item";
 import {Observable} from "rxjs";
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
+import {Api} from "../../../config/Api";
+import * as _ from "lodash";
 
 @Injectable()
 export class ItemModel implements Resolve<Item> {
@@ -31,5 +33,11 @@ export class ItemModel implements Resolve<Item> {
 
     deleteItem(itemId: string): Observable<void> {
         return this.itemResource.delete(itemId);
+    }
+
+    getImageUrlList(item: Item): string[] {
+        return _.map(item.images, (image) => {
+            return Api.HOST + image.imageUrl;
+        });
     }
 }

@@ -7,4 +7,8 @@ import {Item} from "../../Item";
 })
 export class ItemListComponent {
     @Input() items: Item[];
+
+    constructor() {
+        console.log(this.items);
+    }
 }
