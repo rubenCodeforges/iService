@@ -1,5 +1,9 @@
 import {Component, Input} from "@angular/core";
 import {Item} from "../../Item";
+import {ItemModel} from "../../services/ItemModel";
+import * as _ from "lodash";
+import {Api} from "../../../../config/Api";
+
 
 @Component({
     selector: "item-list",
@@ -8,7 +12,10 @@ import {Item} from "../../Item";
 export class ItemListComponent {
     @Input() items: Item[];
 
-    constructor() {
-        console.log(this.items);
+    constructor(private model: ItemModel) {
+    }
+
+    public getItemFirstImageUrl(item: Item): string {
+        return Api.HOST + _.first(item.images).imageUrl;
     }
 }

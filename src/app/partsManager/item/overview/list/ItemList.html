@@ -34,24 +34,29 @@
         <li class="item" *ngFor="let item of items">
             <div class="item-row">
                 <div class="item-col fixed item-col-check">
-                    <label class="item-check">
+                    <label class="item-check hidden-sm-down">
                         <input type="checkbox" class="checkbox">
                         <span></span>
                     </label>
+                    <h4 class="item-title hidden-sm-up">
+                        <a [routerLink]="[item.id]">
+                            {{item.title}}
+                        </a>
+                    </h4>
                 </div>
-                <div class="item-col fixed item-col-img md">
-                    <a href="">
+                <div class="item-col fixed item-col-img md" *ngIf="getItemFirstImageUrl(item)">
+                    <a [routerLink]="[item.id]">
                         <div class="item-img rounded"
-                             [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+                             [ngStyle]="{'background-image': 'url(' + getItemFirstImageUrl(item) + ')'}">
                         </div>
                     </a>
                 </div>
-                <div class="item-col">
-                    <a [routerLink]="[item.id]">
-                        <h4 class="item-title">
+                <div class="item-col hidden-sm-down">
+                    <h4 class="item-title">
+                        <a [routerLink]="[item.id]">
                             {{item.title}}
-                        </h4>
-                    </a>
+                        </a>
+                    </h4>
                 </div>
                 <div class="item-col">
                       <span>
