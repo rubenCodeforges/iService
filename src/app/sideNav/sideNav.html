@@ -12,11 +12,11 @@
                         <a href="#" class="nav-link">
                             <i class="fa fa-car"></i>
                             {{navigationItem.title | translate}}
-                            <i class="fa fa-caret-down"></i>
+                            <i class="fa arrow"></i>
                         </a>
                         <ul>
                             <ng-container *ngFor="let route of navigationItem.routes">
-                                <li *ngIf="routeHasLink(route)">
+                                <li *ngIf="routeHasLink(route)" routerLinkActive="active">
                                     <a class="side-nav-item" routerLink="{{ route.path }}">
                                         {{ route.linkName | translate}}
                                     </a>

@@ -11,7 +11,7 @@ export class FormService {
 
     public static markFormControlsTouched(form: FormGroup) {
         _.each(form.controls, (control: FormControl) => {
-            control.markAsTouched(true);
+            control.markAsTouched();
         });
     }
 

@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <section>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.TITLE</th>
+                        <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.DESCRIPTION</th>
+                        <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.PRICE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of items" (click)="openItemDetail(item)">
+                        <td>
+                            <!--<div class="item-img rounded"-->
+                            <!--*ngIf="getItemFirstImageUrl(item); else defaultImage"-->
+                            <!--[ngStyle]="{'background-image': 'url(' + getItemFirstImageUrl(item) + ')'}"></div>-->
+                            <!--<ng-container #defaultImage>-->
+
+                            <!--</ng-container>-->
+                        </td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.price}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>

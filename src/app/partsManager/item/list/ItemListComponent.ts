@@ -1,9 +1,7 @@
 import {Component, Input} from "@angular/core";
-import {Item} from "../../Item";
-import {ItemModel} from "../../services/ItemModel";
+import {Item} from "../Item";
 import * as _ from "lodash";
-import {Api} from "../../../../config/Api";
-
+import {Api} from "../../../config/Api";
 
 @Component({
     selector: "item-list",
@@ -12,7 +10,7 @@ import {Api} from "../../../../config/Api";
 export class ItemListComponent {
     @Input() items: Item[];
 
-    constructor(private model: ItemModel) {
+    constructor() {
     }
 
     public getItemFirstImageUrl(item: Item): string {

@@ -1,4 +1,3 @@
-import {VehiclesRoutes} from "../vehicles/VehiclesRoutes";
 import {ExtendedRoutes} from "../infrastructure/routes/ExtendedRoutes";
 import {PartsManagerRoutes} from "../partsManager/PartsManagerRoutes";
 
@@ -7,7 +6,6 @@ import {PartsManagerRoutes} from "../partsManager/PartsManagerRoutes";
  */
 export class SideNavConfig {
     public static readonly RegisteredNavigationRoutes: ExtendedRoutes[] = [
-        VehiclesRoutes,
         PartsManagerRoutes
     ]
 }

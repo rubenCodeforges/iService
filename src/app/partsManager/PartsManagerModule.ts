@@ -16,8 +16,10 @@ import {PartsManagerRoutes} from "./PartsManagerRoutes";
 import {OrderCreateModal} from "./order/create/OrderCreateModal";
 import {TranslateModule} from "@ngx-translate/core";
 import {ItemCreateModal} from "./item/create/ItemCreateModal";
-import {ItemListComponent} from "./item/overview/list/ItemListComponent";
+import {ItemListComponent} from "./item/list/ItemListComponent";
 import {OrderResolver} from "./order/services/OrderResolver";
+import {ItemTableComponent} from "./item/table/ItemTableComponent";
+import {OrderTableComponent} from "./order/table/OrderTableComponent";
 
 @NgModule({
     imports: [
@@ -33,10 +35,12 @@ import {OrderResolver} from "./order/services/OrderResolver";
         OrderOverviewComponent,
         OrderDetailComponent,
         OrderCreateModal,
+        OrderTableComponent,
         ItemCreateModal,
         ItemOverviewComponent,
         ItemDetailComponent,
-        ItemListComponent
+        ItemListComponent,
+        ItemTableComponent
     ],
     providers: [
         OrderModel,

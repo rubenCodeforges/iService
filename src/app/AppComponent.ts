@@ -8,6 +8,10 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
     constructor(translate: TranslateService) {
-        translate.setDefaultLang('eng');
+        if (translate.getBrowserLang() == 'rus') {
+            translate.setDefaultLang('rus');
+        } else {
+            translate.setDefaultLang('eng');
+        }
     };
 }

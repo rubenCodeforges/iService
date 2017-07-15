@@ -1,0 +1,26 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <section>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.TITLE</th>
+                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.CREATED_AT</th>
+                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.STATE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let order of orders" (click)="openDetails(order)">
+                        <td>{{order.id}}</td>
+                        <td>{{order.title}}</td>
+                        <td>{{order.createdAt}}</td>
+                        <td>{{order.state}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>

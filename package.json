@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
+    "deploy": "ng build --prod --aot && ./deploy-dev.sh",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
@@ -26,11 +27,12 @@
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
     "font-awesome": "4.6.3",
+    "fontawesome": "^4.7.2",
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",
     "metismenu": "^2.6.2",
     "minimongo": "^4.3.0",
-    "rxjs": "^5.2.0",
+    "rxjs": "^5.4.2",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.8.4"
   },
@@ -38,7 +40,7 @@
     "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "4.0.0",
     "@types/jasmine": "2.5.38",
-    "@types/lodash": "^4.14.61",
+    "@types/lodash": "^4.14.69",
     "@types/node": "^6.0.42",
     "codelyzer": "~1.0.0-beta.3",
     "jasmine-core": "2.5.2",
@@ -51,7 +53,7 @@
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "^2.1.5",
+    "typescript": "^2.4.1",
     "webdriver-manager": "10.2.5"
   }
 }
