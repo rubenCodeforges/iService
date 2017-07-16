@@ -18,7 +18,7 @@
                     <tr *ngFor="let order of orders" (click)="openDetails(order)">
                         <td>{{order.id}}</td>
                         <td>{{order.title}}</td>
-                        <td>{{order.createdAt}}</td>
+                        <td>{{order.createdAt | date: 'shortDate'}}</td>
                         <td>
                             <span ngClass="{{getStateClass(order)}}" class="badge">
                                 {{getOrderStateTranslationKey(order) | translate}}

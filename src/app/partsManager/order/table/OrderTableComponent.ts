@@ -1,6 +1,7 @@
 import {Component, Input} from "@angular/core";
 import {Order, OrderState} from "../Order";
 import {OrderModel} from "../services/OrderModel";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'order-table',
@@ -9,12 +10,14 @@ import {OrderModel} from "../services/OrderModel";
 export class OrderTableComponent {
     @Input() orders: Order[];
 
-    public openDetails(order: Order) {
+    constructor(private router: Router) {
+    }
 
+    public openDetails(order: Order) {
+        this.router.navigateByUrl('orders/' + order.id);
     }
 
     public getStateClass(order: Order) {
-        console.log(order);
         if (order.state == OrderState.PAYED) {
             return "badge-success";
         } else if (order.state == OrderState.PROCESSED) {

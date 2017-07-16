@@ -17,12 +17,12 @@
                     <tbody>
                     <tr *ngFor="let item of items" (click)="openItemDetail(item)">
                         <td>
-                            <!--<div class="item-img rounded"-->
-                            <!--*ngIf="getItemFirstImageUrl(item); else defaultImage"-->
-                            <!--[ngStyle]="{'background-image': 'url(' + getItemFirstImageUrl(item) + ')'}"></div>-->
-                            <!--<ng-container #defaultImage>-->
+                            <div *ngIf="getItemFirstImageUrl(item); else defaultImage">
+                                <img class="w-25 img-thumbnail" src="{{getItemFirstImageUrl(item)}}" alt="">
+                            </div>
+                            <ng-template #defaultImage>
 
-                            <!--</ng-container>-->
+                            </ng-template>
                         </td>
                         <td>{{item.title}}</td>
                         <td>{{item.description}}</td>
