@@ -32,15 +32,7 @@ export class OrderDetailComponent {
     }
 
     public getOrderActionButtonTranslationKey(): string {
-        if (this.order.state == OrderState.NEW) {
-            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.PAY';
-        } else if (this.order.state == OrderState.PAYED) {
-            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.PROCESS';
-        } else if (this.order.state == OrderState.PROCESSED) {
-            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.SEND';
-        } else if (this.order.state == OrderState.SEND) {
-            return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE';
-        }
+        return OrderModel.getOrderStateTranslationKey(this.order);
     }
 
     public isOrderClosed(): boolean {

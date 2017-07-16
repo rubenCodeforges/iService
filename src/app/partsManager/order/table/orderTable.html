@@ -1,8 +1,11 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-block">
+            <div class="card-title-block">
+                <h3 class="title" translate>PARTS_MANAGER.ORDER.TABLE.TITLE</h3>
+            </div>
             <section>
-                <table class="table table-sm table-hover">
+                <table class="table table-sm table-hover table-bordered">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -16,7 +19,11 @@
                         <td>{{order.id}}</td>
                         <td>{{order.title}}</td>
                         <td>{{order.createdAt}}</td>
-                        <td>{{order.state}}</td>
+                        <td>
+                            <span ngClass="{{getStateClass(order)}}" class="badge">
+                                {{getOrderStateTranslationKey(order) | translate}}
+                            </span>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
