@@ -1,6 +1,7 @@
 {
   "FORM.BUTTON.SUBMIT": "Submit",
   "FORM.BUTTON.CANCEL": "Cancel",
+  "FORM.BUTTON.DELETE": "Delete",
   "FORM.BUTTON.ADD": "Add",
   "FORM.VALIDATION.FIELD.REQUIRED": "This field is required",
   "HOME.HEADER.TITLE": "This is the home page",

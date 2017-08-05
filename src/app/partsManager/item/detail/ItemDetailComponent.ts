@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {CurrencyService} from "../../../common/currency/CurrencyService";
 import {Item} from "../Item";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ItemModel} from "../services/ItemModel";
 import {AbstractFormComponent} from "../../../infrastructure/form/AbstractFormComponent";
 import {FormGroup} from "@angular/forms";
@@ -9,6 +9,7 @@ import {FormService} from "../../../infrastructure/form/FormService";
 import {MediaService} from "../../../common/media/MediaService";
 import {Image} from "../../../common/media/Image";
 import * as _ from "lodash";
+import {ToastyService} from "ng2-toasty";
 
 @Component({
     selector: "item-detail",
@@ -21,6 +22,8 @@ export class ItemDetailComponent extends AbstractFormComponent {
 
     constructor(private route: ActivatedRoute,
                 private mediaService: MediaService,
+                private toastyService: ToastyService,
+                private router: Router,
                 private model: ItemModel) {
         super();
         this.item = route.snapshot.data['item'];
@@ -50,5 +53,11 @@ export class ItemDetailComponent extends AbstractFormComponent {
         let file = $event.target['files'][0];
         this.imageFile = new FormData();
         this.imageFile.append('file', file);
+    }
+
+    public onDelete() {
+        this.model.deleteItem(this.item.id).subscribe(() => {
+            this.router.navigateByUrl('items').then(() => this.toastyService.success("Item deleted"));
+        });
     }
 }

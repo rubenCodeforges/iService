@@ -1,6 +1,7 @@
 {
   "FORM.BUTTON.SUBMIT": "Отправить",
   "FORM.BUTTON.CANCEL": "Отменить",
+  "FORM.BUTTON.DELETE": "Удалить",
   "FORM.BUTTON.ADD": "Добавить",
   "FORM.VALIDATION.FIELD.REQUIRED": "Это поле необходимо заполнить",
   "HOME.HEADER.TITLE": "Главная",

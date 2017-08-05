@@ -14,6 +14,7 @@ import {HttpService} from "./infrastructure/http/HttpService";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {NavbarComponent} from "./navbar/NavbarComponent";
 import {AppCommonModule} from "./common/AppCommonModule";
+import {ToastyModule} from "ng2-toasty";
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         }),
         NgbModule.forRoot(),
+        ToastyModule.forRoot(),
         AppCommonModule,
         PartsManagerModule
     ],
@@ -44,6 +46,7 @@ export function HttpLoaderFactory(http: Http) {
         BrowserModule,
         FormsModule,
         NgbModule,
+        ToastyModule,
         RouterModule
     ],
     providers: [
