@@ -44,8 +44,8 @@ export class ItemDetailComponent extends AbstractFormComponent {
         }
     }
 
-    public getImageUrlList(): string[] {
-        return this.model.getImageUrlList(this.item);
+    public getImageThumbnailUrlList(): string[] {
+        return this.model.getImageThumbnailUrlList(this.item);
     }
 
     public onFileSelect($event: Event) {

@@ -5,10 +5,9 @@
                 <h3 class="title" translate>PARTS_MANAGER.ITEM.TABLE.TITLE</h3>
             </div>
             <section>
-                <table class="table table-sm table-hover table-bordered">
+                <table class="table table-hover table-bordered">
                     <thead>
                     <tr>
-                        <th></th>
                         <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.TITLE</th>
                         <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.DESCRIPTION</th>
                         <th translate>PARTS_MANAGER.ITEM.OVERVIEW.TABLE.PRICE</th>
@@ -16,14 +15,6 @@
                     </thead>
                     <tbody>
                     <tr *ngFor="let item of items" (click)="openItemDetail(item)">
-                        <td>
-                            <div *ngIf="getItemFirstImageUrl(item); else defaultImage">
-                                <img class="w-25 img-thumbnail" src="{{getItemFirstImageUrl(item)}}" alt="">
-                            </div>
-                            <ng-template #defaultImage>
-
-                            </ng-template>
-                        </td>
                         <td>{{item.title}}</td>
                         <td>{{item.description}}</td>
                         <td>{{item.price}}</td>

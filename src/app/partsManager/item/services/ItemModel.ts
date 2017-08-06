@@ -40,4 +40,10 @@ export class ItemModel implements Resolve<Item> {
             return Api.HOST + image.imageUrl;
         });
     }
+
+    getImageThumbnailUrlList(item: Item): string[] {
+        return _.map(item.images, (image) => {
+            return Api.HOST + image.thumbUrl;
+        });
+    }
 }
