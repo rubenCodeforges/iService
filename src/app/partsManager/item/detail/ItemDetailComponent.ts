@@ -8,7 +8,6 @@ import {FormGroup} from "@angular/forms";
 import {FormService} from "../../../infrastructure/form/FormService";
 import {MediaService} from "../../../common/media/MediaService";
 import {Image} from "../../../common/media/Image";
-import * as _ from "lodash";
 import {ToastyService} from "ng2-toasty";
 
 @Component({
@@ -35,9 +34,9 @@ export class ItemDetailComponent extends AbstractFormComponent {
             return;
         }
 
-        if (this.imageFile && _.isEmpty(this.item.images)) {
+        if (this.imageFile) {
             this.mediaService.uploadImage(this.imageFile).subscribe((image: Image) => {
-                this.item.images.push(image);
+                this.item.images[0] = image;
                 this.model.updateItem(this.item).subscribe();
             })
         } else {
