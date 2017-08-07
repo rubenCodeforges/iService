@@ -6,26 +6,7 @@
         <span> {{order.createdAt | date: 'shortDate'}}</span>
         <span class="sparkline bar" data-type="bar"></span>
     </h3>
-    <span class="text-right float-right">
-        <button class="btn btn-sm btn-primary"
-                (click)="$event.preventDefault(); openModal()">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button *ngIf="!isOrderClosed()"
-                class="btn btn-sm btn-primary"
-                (click)="updateOrderState()">
-            {{getOrderActionButtonTranslationKey() | translate}}
-        </button>
-        <button *ngIf="!isOrderClosed()"
-                class="btn btn-sm btn-danger"
-                (click)="updateOrderState(true)"
-                translate>
-            PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE
-        </button>
-        <span *ngIf="isOrderClosed()" translate>
-            ORDER.STATE.CLOSED
-        </span>
-    </span>
+    <state-edit-buttons [order]="order"></state-edit-buttons>
 </div>
 
 
@@ -76,7 +57,7 @@
 
         <div class="form-group row">
             <div class="col-12 text-right">
-                <button type="submit" class="btn btn-primary" translate>
+                <button type="submit" class="btn btn-primary" [disabled]="form.form._pristine" translate>
                     FORM.BUTTON.UPDATE
                 </button>
             </div>
@@ -84,4 +65,7 @@
     </div>
 </form>
 
-<item-table [items]="order.items"></item-table>
+<item-table [items]="order.items"
+            (onCreateItem)="onCreateItem($event)"
+            [order]="order">
+</item-table>

@@ -1,0 +1,17 @@
+<span class="text-right float-right">
+    <button *ngIf="!isOrderClosed()"
+            class="btn btn-sm btn-primary"
+            (click)="updateState()">
+        {{getOrderActionButtonTranslationKey() | translate}}
+    </button>
+
+    <button *ngIf="!isOrderClosed()"
+            class="btn btn-sm btn-danger"
+            (click)="updateState(true)"
+            translate>
+        PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE
+    </button>
+    <span *ngIf="isOrderClosed()" translate>
+        ORDER.STATE.CLOSED
+    </span>
+</span>

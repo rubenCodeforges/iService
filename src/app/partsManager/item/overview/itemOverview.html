@@ -4,15 +4,10 @@
             <div class="col-md-12">
                 <h3>
                     {{"PARTS_MANAGER.ITEM.OVERVIEW" | translate}}
-                    <a href="#"
-                       class="btn btn-primary rounded-s pull-right"
-                       (click)="$event.preventDefault(); openModal()">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </a>
                 </h3>
             </div>
         </div>
     </div>
 </div>
 
-<item-table [items]="items"></item-table>
+<item-table [items]="items" (onCreateItem)="onItemCreate($event)"></item-table>

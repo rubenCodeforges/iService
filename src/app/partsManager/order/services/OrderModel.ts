@@ -38,4 +38,24 @@ export class OrderModel {
             return 'PARTS_MANAGER.ORDER.DETAIL.ORDER_STATE.CLOSE';
         }
     }
+
+    public updateOrderState(order: Order, close: boolean = false) {
+        if (order.state == OrderState.NEW) {
+            order.state = OrderState.PAYED;
+        } else if (order.state == OrderState.PAYED) {
+            order.state = OrderState.PROCESSED;
+        } else if (order.state == OrderState.PROCESSED) {
+            order.state = OrderState.SEND;
+        } else if (order.state == OrderState.SEND) {
+            order.state = OrderState.CLOSED;
+        }
+        if (close) {
+            order.state = OrderState.CLOSED;
+        }
+        this.updateOrder(order).subscribe(response => order = response);
+    }
+
+    public isOrderClosed(order: Order): boolean {
+        return order.state == OrderState.CLOSED;
+    }
 }

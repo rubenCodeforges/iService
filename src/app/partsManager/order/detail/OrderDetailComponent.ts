@@ -1,7 +1,8 @@
 import {Component} from "@angular/core";
 import {OrderModel} from "../services/OrderModel";
 import {ActivatedRoute} from "@angular/router";
-import {Order, OrderState} from "../Order";
+import {Order} from "../Order";
+import {Item} from "../../item/Item";
 
 @Component({
     selector: 'order-detail',
@@ -15,36 +16,15 @@ export class OrderDetailComponent {
         this.onRouteChange();
     }
 
-    public updateOrderState(close: boolean = false) {
-        if (this.order.state == OrderState.NEW) {
-            this.order.state = OrderState.PAYED;
-        } else if (this.order.state == OrderState.PAYED) {
-            this.order.state = OrderState.PROCESSED;
-        } else if (this.order.state == OrderState.PROCESSED) {
-            this.order.state = OrderState.SEND;
-        } else if (this.order.state == OrderState.SEND) {
-            this.order.state = OrderState.CLOSED;
-        }
-        if (close) {
-            this.order.state = OrderState.CLOSED;
-        }
-        this.orderModel.updateOrder(this.order).subscribe(order => this.order = order);
-    }
-
-    public getOrderActionButtonTranslationKey(): string {
-        return OrderModel.getOrderStateTranslationKey(this.order);
-    }
-
-    public isOrderClosed(): boolean {
-        return this.order.state == OrderState.CLOSED;
-    }
-
-    public openModal() {
-
-    }
-
     public onUpdate() {
+        this.orderModel.updateOrder(this.order).subscribe();
+    }
 
+    public onCreateItem(item: Item) {
+        if (item) {
+            this.order.items.push(item);
+            this.onUpdate();
+        }
     }
 
     private onRouteChange() {

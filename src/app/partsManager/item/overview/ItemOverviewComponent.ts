@@ -2,8 +2,6 @@ import {Item} from "../Item";
 import {ItemModel} from "../services/ItemModel";
 import {Component} from "@angular/core";
 import * as _ from "lodash";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ItemCreateModal} from "../create/ItemCreateModal";
 
 @Component({
     selector: 'item-overview',
@@ -12,14 +10,12 @@ import {ItemCreateModal} from "../create/ItemCreateModal";
 export class ItemOverviewComponent {
     public items: Item[] = [];
 
-    constructor(private itemModel: ItemModel,
-                private modalService: NgbModal) {
+    constructor(private itemModel: ItemModel) {
         this.loadItems();
     }
 
-    public openModal() {
-        this.modalService.open(ItemCreateModal)
-            .result.then(() => this.loadItems());
+    public onItemCreate() {
+        this.loadItems();
     }
 
     private loadItems() {
