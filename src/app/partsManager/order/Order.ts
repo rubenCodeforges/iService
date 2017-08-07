@@ -4,6 +4,7 @@ export class Order {
     public id: string;
     public title: string;
     public state: OrderState;
+    public description: string;
     public createdAt: Date;
     public items: Item[];
 
