@@ -1,4 +1,6 @@
 {
+  "ERROR.HTTP.404": "The requested resource couldnt be found",
+  "ERROR.HTTP.500": "Whoops something went wrong, please try again later",
   "FORM.BUTTON.SUBMIT": "Submit",
   "FORM.BUTTON.UPDATE": "Update",
   "FORM.BUTTON.CANCEL": "Cancel",

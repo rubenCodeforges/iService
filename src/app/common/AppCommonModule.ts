@@ -5,10 +5,12 @@ import {AppCommonRoutes} from "./AppCommonRoutes";
 import {ErrorPageComponent} from "./errorPages/ErrorPageComponent";
 import {ImageResource} from "./media/ImageResource";
 import {MediaService} from "./media/MediaService";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     imports: [
-        RouterModule.forChild(AppCommonRoutes)
+        RouterModule.forChild(AppCommonRoutes),
+        TranslateModule
     ],
     declarations: [
         ErrorPageComponent

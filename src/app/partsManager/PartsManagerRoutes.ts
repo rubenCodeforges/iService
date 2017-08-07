@@ -9,10 +9,26 @@ import {ItemModel} from "./item/services/ItemModel";
 export const PartsManagerRoutes: ExtendedRoutes = {
     title: "PARTS_MANAGER.NAVIGATION.TITLE",
     routes: [
-        {path: 'items', component: ItemOverviewComponent, linkName: "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW"},
-        {path: 'items/:id', component: ItemDetailComponent, resolve: {item: ItemModel}},
-        {path: 'orders', component: OrderOverviewComponent, linkName: "PARTS_MANAGER.NAVIGATION.ORDERS_OVERVIEW"},
-        {path: 'orders/:id', component: OrderDetailComponent, resolve: {order: OrderResolver}},
+        {
+            path: 'items',
+            component: ItemOverviewComponent,
+            linkName: "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW"
+        },
+        {
+            path: 'items/:id',
+            component: ItemDetailComponent,
+            resolve: {item: ItemModel}
+        },
+        {
+            path: 'orders',
+            component: OrderOverviewComponent,
+            linkName: "PARTS_MANAGER.NAVIGATION.ORDERS_OVERVIEW"
+        },
+        {
+            path: 'orders/:id',
+            component: OrderDetailComponent,
+            resolve: {order: OrderResolver}
+        },
     ],
     enabled: true
 };

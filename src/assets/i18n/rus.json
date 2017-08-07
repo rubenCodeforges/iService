@@ -1,4 +1,6 @@
 {
+  "ERROR.HTTP.404": "Не, не катит, ресурса нема такого",
+  "ERROR.HTTP.500": "Фига се, что то пошло не так, попробуйте позже",
   "FORM.BUTTON.SUBMIT": "Отправить",
   "FORM.BUTTON.UPDATE": "Обновить",
   "FORM.BUTTON.CANCEL": "Отменить",
