@@ -1,33 +1,31 @@
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-block">
-            <div class="card-title-block">
-                <h3 class="title" translate>PARTS_MANAGER.ORDER.TABLE.TITLE</h3>
-            </div>
-            <section>
-                <table class="table table-sm table-hover table-bordered">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.TITLE</th>
-                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.CREATED_AT</th>
-                        <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.STATE</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let order of orders" (click)="openDetails(order)">
-                        <td>{{order.id}}</td>
-                        <td>{{order.title}}</td>
-                        <td>{{order.createdAt | date: 'shortDate'}}</td>
-                        <td>
-                            <span ngClass="{{getStateClass(order)}}" class="badge">
-                                {{getOrderStateTranslationKey(order) | translate}}
-                            </span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
+<div class="card">
+    <div class="card-block">
+        <div class="card-title-block">
+            <h3 class="title" translate>PARTS_MANAGER.ORDER.TABLE.TITLE</h3>
         </div>
+        <section>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.TITLE</th>
+                    <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.CREATED_AT</th>
+                    <th translate>PARTS_MANAGER.ORDER.OVERVIEW.TABLE.STATE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let order of orders" (click)="openDetails(order)">
+                    <td>{{order.id}}</td>
+                    <td>{{order.title}}</td>
+                    <td>{{order.createdAt | date: 'shortDate'}}</td>
+                    <td>
+                        <span ngClass="{{getStateClass(order)}}" class="badge">
+                            {{getOrderStateTranslationKey(order) | translate}}
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 </div>

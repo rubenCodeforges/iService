@@ -43,6 +43,10 @@ export class OrderDetailComponent {
 
     }
 
+    public onUpdate() {
+
+    }
+
     private onRouteChange() {
         this.route.params.subscribe((param) => {
             this.orderModel.getOrder(param['id']).subscribe(order => this.order = order);

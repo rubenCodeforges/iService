@@ -1,7 +1,9 @@
 <div class="title-block">
     <h3 class="title float-left">
         {{"PARTS_MANAGER.ORDER.DETAIL.TITLE" | translate}}
-        <span> - {{order.title}}</span>
+        <span>{{order.id}} - </span>
+        <span>{{order.title}} - </span>
+        <span> {{order.createdAt | date: 'shortDate'}}</span>
         <span class="sparkline bar" data-type="bar"></span>
     </h3>
     <span class="text-right float-right">
@@ -26,7 +28,60 @@
     </span>
 </div>
 
-<h4 translate>
-    PARTS_MANAGER.ORDER.CREATE.ITEM.LIST
-</h4>
+
+<form name="item" #form="ngForm" (ngSubmit)="onUpdate(form)">
+    <div class="card card-block">
+        <div class="form-group row">
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.TITLE
+            </label>
+            <div class="col-sm-10">
+                <input type="text"
+                       class="form-control boxed"
+                       [(ngModel)]="order.title"
+                       name="itemTitle">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 form-control-label text-xs-right" translate>
+                PARTS_MANAGER.ITEM.CREATE.DESCRIPTION
+            </label>
+            <div class="col-sm-10">
+                <textarea class="form-control"
+                          name="itemDescription"
+                          rows="10"
+                          [(ngModel)]="order.description"
+                          id="itemDescription"></textarea>
+            </div>
+        </div>
+        <!--<div class="form-group row">-->
+        <!--<label class="col-sm-2 form-control-label text-xs-right">-->
+        <!--Images:-->
+        <!--</label>-->
+        <!--<div class="col-sm-10">-->
+        <!--<ng-container *ngFor="let imageUrl of getImageThumbnailUrlList()">-->
+        <!--<img src="{{imageUrl}}" alt="">-->
+        <!--</ng-container>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group row">-->
+        <!--<div class="col-12">-->
+        <!--<input name="imageFile"-->
+        <!--type="file"-->
+        <!--accept=".jpg,.png,.jpeg"-->
+        <!--(change)="onFileSelect($event)">-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="form-group row">
+            <div class="col-12 text-right">
+                <button type="submit" class="btn btn-primary" translate>
+                    FORM.BUTTON.UPDATE
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
 <item-table [items]="order.items"></item-table>
