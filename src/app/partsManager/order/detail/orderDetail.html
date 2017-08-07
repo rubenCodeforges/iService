@@ -5,6 +5,10 @@
         <span class="sparkline bar" data-type="bar"></span>
     </h3>
     <span class="text-right float-right">
+        <button class="btn btn-sm btn-primary"
+                (click)="$event.preventDefault(); openModal()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
         <button *ngIf="!isOrderClosed()"
                 class="btn btn-sm btn-primary"
                 (click)="updateOrderState()">
@@ -22,5 +26,7 @@
     </span>
 </div>
 
-<h4 translate>PARTS_MANAGER.ORDER.CREATE.ITEM.LIST</h4>
+<h4 translate>
+    PARTS_MANAGER.ORDER.CREATE.ITEM.LIST
+</h4>
 <item-table [items]="order.items"></item-table>

@@ -39,6 +39,10 @@ export class OrderDetailComponent {
         return this.order.state == OrderState.CLOSED;
     }
 
+    public openModal() {
+
+    }
+
     private onRouteChange() {
         this.route.params.subscribe((param) => {
             this.orderModel.getOrder(param['id']).subscribe(order => this.order = order);
