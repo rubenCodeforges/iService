@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
-import {CrudResource} from "../../../infrastructure/crud/CrudResource";
+import {CrudResource} from "../../../common/crud/CrudResource";
 import {Api} from "../../../config/Api";
-import {HttpService} from "../../../infrastructure/http/HttpService";
+import {HttpService} from "../../../common/http/HttpService";
 import {Item} from "../Item";
 import {RequestOptions, URLSearchParams} from "@angular/http";
 

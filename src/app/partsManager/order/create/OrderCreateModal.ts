@@ -6,7 +6,7 @@ import {Order} from "../Order";
 import {FormControl, FormGroup} from "@angular/forms";
 import {OrderModel} from "../services/OrderModel";
 import {ItemModel} from "../../item/services/ItemModel";
-import {FormService} from "../../../infrastructure/form/FormService";
+import {FormService} from "../../../common/form/FormService";
 import {Observable} from "rxjs";
 
 @Component({

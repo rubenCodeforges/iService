@@ -1,4 +1,4 @@
-import {ExtendedRoutes} from "../infrastructure/routes/ExtendedRoutes";
+import {ExtendedRoutes} from "../common/routes/ExtendedRoutes";
 import {PartsManagerRoutes} from "../partsManager/PartsManagerRoutes";
 
 /**

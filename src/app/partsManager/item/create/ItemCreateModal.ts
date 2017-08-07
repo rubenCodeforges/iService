@@ -3,9 +3,9 @@ import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ItemModel} from "../services/ItemModel";
 import {Item} from "../Item";
-import {FormService} from "../../../infrastructure/form/FormService";
+import {FormService} from "../../../common/form/FormService";
 import {CurrencyService} from "../../../common/currency/CurrencyService";
-import {AbstractFormComponent} from "../../../infrastructure/form/AbstractFormComponent";
+import {AbstractFormComponent} from "../../../common/form/AbstractFormComponent";
 import {Order} from "../../order/Order";
 
 @Component({

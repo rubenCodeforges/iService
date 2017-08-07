@@ -1,10 +1,12 @@
-import {ExtendedRoutes} from "../infrastructure/routes/ExtendedRoutes";
+import {ExtendedRoutes} from "../common/routes/ExtendedRoutes";
 import {ItemOverviewComponent} from "./item/overview/ItemOverviewComponent";
 import {ItemDetailComponent} from "./item/detail/ItemDetailComponent";
 import {OrderOverviewComponent} from "./order/overview/OrderOverviewComponent";
 import {OrderDetailComponent} from "./order/detail/OrderDetailComponent";
 import {OrderResolver} from "./order/services/OrderResolver";
 import {ItemModel} from "./item/services/ItemModel";
+import {Roles} from "../common/user/Roles";
+import {RouteGuard} from "../common/security/RouteGuard";
 
 export const PartsManagerRoutes: ExtendedRoutes = {
     title: "PARTS_MANAGER.NAVIGATION.TITLE",
@@ -12,7 +14,11 @@ export const PartsManagerRoutes: ExtendedRoutes = {
         {
             path: 'items',
             component: ItemOverviewComponent,
-            linkName: "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW"
+            linkName: "PARTS_MANAGER.NAVIGATION.ITEMS_OVERVIEW",
+            roleRequired: Roles.ADMIN,
+            canActivate: [
+                RouteGuard
+            ]
         },
         {
             path: 'items/:id',
@@ -30,5 +36,5 @@ export const PartsManagerRoutes: ExtendedRoutes = {
             resolve: {order: OrderResolver}
         },
     ],
-    enabled: true
+    enabled: true,
 };

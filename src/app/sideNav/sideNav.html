@@ -8,7 +8,7 @@
         <nav class="menu">
             <ul class="nav metismenu" id="sidebar-menu">
                 <ng-container *ngFor="let navigationItem of navigationItems">
-                    <li *ngIf="navigationItem.enabled" routerLinkActive="active">
+                    <li *ngIf="isNavigationItemEnabled(navigationItem)" routerLinkActive="active">
                         <a href="#" class="nav-link">
                             <i class="fa fa-car"></i>
                             {{navigationItem.title | translate}}
@@ -16,7 +16,7 @@
                         </a>
                         <ul>
                             <ng-container *ngFor="let route of navigationItem.routes">
-                                <li *ngIf="routeHasLink(route)" routerLinkActive="active">
+                                <li *ngIf="routeHasLink(route) && isRouteEnabled(route)" routerLinkActive="active">
                                     <a class="side-nav-item" routerLink="{{ route.path }}">
                                         {{ route.linkName | translate}}
                                     </a>

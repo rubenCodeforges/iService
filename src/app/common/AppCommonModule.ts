@@ -6,6 +6,9 @@ import {ErrorPageComponent} from "./errorPages/ErrorPageComponent";
 import {ImageResource} from "./media/ImageResource";
 import {MediaService} from "./media/MediaService";
 import {TranslateModule} from "@ngx-translate/core";
+import {RouteGuard} from "./security/RouteGuard";
+import {UserService} from "./user/UserService";
+import {AuthService} from "./auth/AuthService";
 
 @NgModule({
     imports: [
@@ -19,6 +22,9 @@ import {TranslateModule} from "@ngx-translate/core";
     providers: [
         CurrencyService,
         ImageResource,
+        RouteGuard,
+        UserService,
+        AuthService,
         MediaService
     ]
 })
