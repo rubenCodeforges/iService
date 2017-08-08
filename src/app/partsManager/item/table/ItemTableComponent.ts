@@ -11,7 +11,7 @@ import {Order} from "../../order/Order";
 })
 export class ItemTableComponent {
     @Input() items: Item[];
-    @Input() order?: Order;
+    @Input() order: Order = null;
     @Output() onCreateItem: EventEmitter<Item> = new EventEmitter<Item>();
 
     constructor(private router: Router,

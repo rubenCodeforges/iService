@@ -4,7 +4,7 @@
         <button type="button"
                 class="close"
                 aria-label="Close"
-                (click)="onClose()">
+                (click)="onClose(item)">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -38,14 +38,6 @@
                     FORM.VALIDATION.FIELD.REQUIRED
                 </span>
             </div>
-
-            <!--<div class="form-group required">-->
-            <!--<label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.IMAGE</label>-->
-            <!--<input type="text"-->
-            <!--name="itemImage"-->
-            <!--[(ngModel)]="itemImage"-->
-            <!--class="form-control boxed">-->
-            <!--</div>-->
 
             <div class="form-group required">
                 <label class="control-label" translate>PARTS_MANAGER.ITEM.CREATE.CURRENCY</label>

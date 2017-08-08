@@ -13,7 +13,7 @@ import {Order} from "../../order/Order";
     templateUrl: './itemCreateModal.html'
 })
 export class ItemCreateModal extends AbstractFormComponent {
-    @Input() order?: Order;
+    @Input() order?: Order = null;
     public item: Item = new Item();
     public availableCurrencies: string[] = CurrencyService.getCurrencyAsArray();
 
@@ -33,7 +33,7 @@ export class ItemCreateModal extends AbstractFormComponent {
         });
     }
 
-    public onClose(item: Item) {
+    public onClose(item?: Item) {
         this.activeModal.close(item);
     }
 
