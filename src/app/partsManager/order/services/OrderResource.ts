@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {CrudResource} from "../../../infrastructure/crud/CrudResource";
+import {CrudResource} from "../../../common/crud/CrudResource";
 import {Api} from "../../../config/Api";
-import {HttpService} from "../../../infrastructure/http/HttpService";
+import {HttpService} from "../../../common/http/HttpService";
 import {Observable} from "rxjs";
 import {Order} from "../Order";
 

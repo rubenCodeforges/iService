@@ -20,6 +20,7 @@ import {ItemListComponent} from "./item/list/ItemListComponent";
 import {OrderResolver} from "./order/services/OrderResolver";
 import {ItemTableComponent} from "./item/table/ItemTableComponent";
 import {OrderTableComponent} from "./order/table/OrderTableComponent";
+import {StateEditButtonsComponent} from "./order/state-edit-buttons/StateEditButtonsComponent";
 
 @NgModule({
     imports: [
@@ -36,6 +37,7 @@ import {OrderTableComponent} from "./order/table/OrderTableComponent";
         OrderDetailComponent,
         OrderCreateModal,
         OrderTableComponent,
+        StateEditButtonsComponent,
         ItemCreateModal,
         ItemOverviewComponent,
         ItemDetailComponent,
