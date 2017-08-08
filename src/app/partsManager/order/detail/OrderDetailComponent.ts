@@ -3,6 +3,7 @@ import {OrderModel} from "../services/OrderModel";
 import {ActivatedRoute} from "@angular/router";
 import {Order} from "../Order";
 import {Item} from "../../item/Item";
+import {ToastService} from "../../../common/notification/ToastService";
 
 @Component({
     selector: 'order-detail',
@@ -12,12 +13,13 @@ export class OrderDetailComponent {
     public order: Order = <Order> {};
 
     constructor(private route: ActivatedRoute,
+                private toastService: ToastService,
                 private orderModel: OrderModel) {
         this.onRouteChange();
     }
 
     public onUpdate() {
-        this.orderModel.updateOrder(this.order).subscribe();
+        this.orderModel.updateOrder(this.order).subscribe(() => this.toastService.success('TOAST.UPDATE.ORDER'));
     }
 
     public onCreateItem(item: Item) {

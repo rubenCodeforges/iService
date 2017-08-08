@@ -8,6 +8,7 @@ import {OrderModel} from "../services/OrderModel";
 import {ItemModel} from "../../item/services/ItemModel";
 import {FormService} from "../../../common/form/FormService";
 import {Observable} from "rxjs";
+import {ToastService} from "../../../common/notification/ToastService";
 
 @Component({
     selector: 'order-create-modal',
@@ -20,6 +21,7 @@ export class OrderCreateModal {
 
     constructor(private activeModal: NgbActiveModal,
                 private itemModel: ItemModel,
+                private toastService: ToastService,
                 private orderModel: OrderModel) {
     }
 
@@ -30,6 +32,7 @@ export class OrderCreateModal {
             return;
         }
         this.orderModel.createOrder(this.order).subscribe(() => {
+            this.toastService.success('TOAST.CREATE.ORDER');
             this.onClose();
         });
     }
@@ -43,7 +46,6 @@ export class OrderCreateModal {
             .debounceTime(300)
             .distinctUntilChanged()
             .switchMap((term) => {
-                console.log(term);
                 return this.itemModel.getAllItems(term);
             })
     };

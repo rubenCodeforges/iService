@@ -8,7 +8,7 @@ import {FormGroup} from "@angular/forms";
 import {FormService} from "../../../common/form/FormService";
 import {MediaService} from "../../../common/media/MediaService";
 import {Image} from "../../../common/media/Image";
-import {ToastyService} from "ng2-toasty";
+import {ToastService} from "../../../common/notification/ToastService";
 
 @Component({
     selector: "item-detail",
@@ -21,7 +21,7 @@ export class ItemDetailComponent extends AbstractFormComponent {
 
     constructor(private route: ActivatedRoute,
                 private mediaService: MediaService,
-                private toastyService: ToastyService,
+                private toastService: ToastService,
                 private router: Router,
                 private model: ItemModel) {
         super();
@@ -40,7 +40,9 @@ export class ItemDetailComponent extends AbstractFormComponent {
                 this.model.updateItem(this.item).subscribe();
             })
         } else {
-            this.model.updateItem(this.item).subscribe();
+            this.model.updateItem(this.item).subscribe(() => {
+                this.toastService.success("TOAST.UPDATE.ITEM");
+            });
         }
     }
 
@@ -56,7 +58,7 @@ export class ItemDetailComponent extends AbstractFormComponent {
 
     public onDelete() {
         this.model.deleteItem(this.item.id).subscribe(() => {
-            this.router.navigateByUrl('items').then(() => this.toastyService.success("Item deleted"));
+            this.router.navigateByUrl('items').then(() => this.toastService.success("TOAST.UPDATE.DELETE"));
         });
     }
 }

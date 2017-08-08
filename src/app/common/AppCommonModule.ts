@@ -10,11 +10,12 @@ import {RouteGuard} from "./security/RouteGuard";
 import {UserService} from "./user/UserService";
 import {AuthService} from "./auth/AuthService";
 import {GoBackButtonComponent} from "./navigation/GoBackButtonComponent";
+import {ToastService} from "./notification/ToastService";
 
 @NgModule({
     imports: [
         RouterModule.forChild(AppCommonRoutes),
-        TranslateModule
+        TranslateModule,
     ],
     declarations: [
         GoBackButtonComponent,
@@ -27,6 +28,7 @@ import {GoBackButtonComponent} from "./navigation/GoBackButtonComponent";
         CurrencyService,
         ImageResource,
         RouteGuard,
+        ToastService,
         UserService,
         AuthService,
         MediaService
