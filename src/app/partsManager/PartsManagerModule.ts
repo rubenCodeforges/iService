@@ -21,6 +21,7 @@ import {OrderResolver} from "./order/services/OrderResolver";
 import {ItemTableComponent} from "./item/table/ItemTableComponent";
 import {OrderTableComponent} from "./order/table/OrderTableComponent";
 import {StateEditButtonsComponent} from "./order/state-edit-buttons/StateEditButtonsComponent";
+import {AppCommonModule} from "../common/AppCommonModule";
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import {StateEditButtonsComponent} from "./order/state-edit-buttons/StateEditBut
         CommonModule,
         HttpModule,
         TranslateModule.forChild(),
+        AppCommonModule,
         NgbModule
     ],
     declarations: [

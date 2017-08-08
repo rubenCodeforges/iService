@@ -1,4 +1,4 @@
-<span class="text-right float-right">
+<span class="text-right float-right" *ngIf="isEnabled()">
     <button *ngIf="!isOrderClosed()"
             class="btn btn-sm btn-primary"
             (click)="updateState()">

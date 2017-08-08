@@ -9,6 +9,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import {RouteGuard} from "./security/RouteGuard";
 import {UserService} from "./user/UserService";
 import {AuthService} from "./auth/AuthService";
+import {GoBackButtonComponent} from "./navigation/GoBackButtonComponent";
 
 @NgModule({
     imports: [
@@ -16,9 +17,12 @@ import {AuthService} from "./auth/AuthService";
         TranslateModule
     ],
     declarations: [
+        GoBackButtonComponent,
         ErrorPageComponent
     ],
-    exports: [],
+    exports: [
+        GoBackButtonComponent,
+    ],
     providers: [
         CurrencyService,
         ImageResource,

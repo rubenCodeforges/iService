@@ -1,6 +1,8 @@
 import {Component, Input} from "@angular/core";
 import {Order} from "../Order";
 import {OrderModel} from "app/partsManager/order/services/OrderModel";
+import {UserService} from "../../../common/user/UserService";
+import {Roles} from "../../../common/user/Roles";
 
 @Component({
     templateUrl: 'stateEditButtons.html',
@@ -9,7 +11,12 @@ import {OrderModel} from "app/partsManager/order/services/OrderModel";
 export class StateEditButtonsComponent {
     @Input() order: Order;
 
-    constructor(private orderModel: OrderModel) {
+    constructor(private orderModel: OrderModel,
+                private userService: UserService) {
+    }
+
+    public isEnabled(): boolean {
+        return this.userService.getCurrentUser().getRole() != Roles.GUEST;
     }
 
     public updateState() {
