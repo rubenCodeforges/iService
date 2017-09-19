@@ -45,5 +45,11 @@
   "PARTS_MANAGER.ITEM.CREATE.DESCRIPTION": "Описание",
   "PARTS_MANAGER.ITEM.CREATE.IMAGE": "Картинка",
   "PARTS_MANAGER.ITEM.CREATE.CURRENCY": "Валюта",
-  "PARTS_MANAGER.ITEM.CREATE.PRICE": "Цена"
+  "PARTS_MANAGER.ITEM.CREATE.PRICE": "Цена",
+  "TOAST.UPDATE.ITEM": "Товар обновлен",
+  "TOAST.DELETE.ITEM": "Товар удален",
+  "TOAST.CREATE.ITEM": "Товар создан",
+  "TOAST.UPDATE.ORDER": "Заказ обновлен",
+  "TOAST.DELETE.ORDER": "Заказ удален",
+  "TOAST.CREATE.ORDER": "Заказ создан"
 }

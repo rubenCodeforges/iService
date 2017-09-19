@@ -45,5 +45,11 @@
   "PARTS_MANAGER.ITEM.CREATE.DESCRIPTION": "Description",
   "PARTS_MANAGER.ITEM.CREATE.IMAGE": "Image",
   "PARTS_MANAGER.ITEM.CREATE.CURRENCY": "Currency",
-  "PARTS_MANAGER.ITEM.CREATE.PRICE": "Price"
+  "PARTS_MANAGER.ITEM.CREATE.PRICE": "Price",
+  "TOAST.UPDATE.ITEM": "Item Updated",
+  "TOAST.DELETE.ITEM": "Item deleted",
+  "TOAST.CREATE.ITEM": "Item created",
+  "TOAST.UPDATE.ORDER": "Order Updated",
+  "TOAST.DELETE.ORDER": "Order deleted",
+  "TOAST.CREATE.ORDER": "Order created"
 }
