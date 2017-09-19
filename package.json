@@ -56,5 +56,9 @@
     "tslint": "3.13.0",
     "typescript": "^2.4.1",
     "webdriver-manager": "10.2.5"
+  },
+  "engines": {
+    "node": "6.11.1",
+    "npm": "3.10.9"
   }
 }
