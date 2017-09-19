@@ -4,11 +4,11 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --prod --aot",
     "lint": "tslint \"src/**/*.ts\"",
-    "deploy": "ng build --prod --aot && ./deploy-dev.sh",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
+    "postinstall": "ng build --aot -prod",
     "e2e": "protractor"
   },
   "private": true,
@@ -35,10 +35,10 @@
     "ng2-toasty": "^4.0.3",
     "rxjs": "^5.4.2",
     "ts-helpers": "^1.1.1",
+    "@angular/cli": "^1.0.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/lodash": "^4.14.69",
