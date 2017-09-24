@@ -15,6 +15,7 @@ import {SideNavComponent} from "./sideNav/SideNavComponent";
 import {NavbarComponent} from "./navbar/NavbarComponent";
 import {BrowserModule} from "@angular/platform-browser";
 import {LoginComponent} from "./login/LoginComponent";
+import {AuthResource} from "./auth/AuthResource";
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import {LoginComponent} from "./login/LoginComponent";
         RouteGuard,
         ToastService,
         UserService,
+        AuthResource,
         AuthService,
         MediaService
     ]

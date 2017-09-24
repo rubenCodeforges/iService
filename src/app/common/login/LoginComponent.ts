@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
+import {AuthService} from "../auth/AuthService";
 
 @Component({
     templateUrl: './login.html',
@@ -7,7 +8,8 @@ import {ActivatedRoute} from "@angular/router";
     styleUrls: ['./login.less']
 })
 export class LoginComponent {
-    constructor(private route: ActivatedRoute) {
-        console.log(this.route.snapshot.fragment);
+    constructor(private route: ActivatedRoute,
+                private authService: AuthService) {
+        this.authService.authenticateUser(this.route.snapshot.fragment).subscribe();
     }
 }
