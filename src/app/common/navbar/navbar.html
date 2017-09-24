@@ -7,6 +7,9 @@
     <div class="header-block header-block-nav">
         <ul class="navbar-nav language-switch">
             <li>
+                <button (click)="login()">login</button>
+            </li>
+            <li>
                 <a href="#" [class.active]="selectedLanguage == 'eng'"
                    (click)="$event.preventDefault(); changeLanguage('eng')">
                     ENG

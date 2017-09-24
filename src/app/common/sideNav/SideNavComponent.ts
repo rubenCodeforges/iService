@@ -1,8 +1,8 @@
 import {Component} from "@angular/core";
 import * as _ from "lodash";
-import {SideNavConfig} from "../config/SideNavConfig";
-import {ExtendedRoute, ExtendedRoutes} from "../common/routes/ExtendedRoutes";
-import {UserService} from "../common/user/UserService";
+import {SideNavConfig} from "../../config/SideNavConfig";
+import {ExtendedRoute, ExtendedRoutes} from "../routes/ExtendedRoutes";
+import {UserService} from "../user/UserService";
 
 @Component({
     selector: 'side-nav',
