@@ -19,7 +19,7 @@ export class NavbarComponent {
     public login() {
         this.googleAuth.getAuth().subscribe((auth) => {
             auth.signIn().then((response) => {
-                console.log(response)
+                console.log(response.getId());
             });
         })
     }

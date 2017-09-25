@@ -10,7 +10,7 @@ import {AuthService} from "../auth/AuthService";
 export class LoginComponent {
     constructor(private route: ActivatedRoute,
                 private authService: AuthService) {
-        this.authService.authenticateUser(this.route.snapshot.fragment).subscribe((response) => {
+        this.authService.signInUser(this.route.snapshot.fragment).subscribe((response) => {
             console.log(response);
         });
     }

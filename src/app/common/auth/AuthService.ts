@@ -25,8 +25,8 @@ export class AuthService {
         }
     }
 
-    public authenticateUser(idTokenFragment: string): Observable<any> {
-        return this.authResource.authenticateUser(idTokenFragment.replace('id_token=', ''));
+    public signInUser(idTokenFragment: string): Observable<any> {
+        return this.authResource.signInUser(idTokenFragment.replace('id_token=', ''));
     }
 
     private hasUserInSession(): boolean {
