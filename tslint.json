@@ -109,6 +109,14 @@
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "templates-use-public": true,
-    "invoke-injectable": true
+    "invoke-injectable": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "arrow-call-signature",
+      "property-declaration",
+      "member-variable-declaration"
+    ]
   }
 }
