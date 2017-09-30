@@ -19,7 +19,7 @@ script:
   - ng build --prod --aot
 
 after_success:
-  sshpass -p "$PASS" scp -r ./dist $USER@172.104.146.214:/var/www/iservice
+  sshpass -p $PASS scp -r ./dist/* $USER@172.104.146.214:/var/www/iservice
 
 #notifications:
 #  email:
