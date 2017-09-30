@@ -1,6 +1,10 @@
 #.travis.yml
 
 language: node_js
+addons:
+  apt:
+    packages:
+    - sshpass
 node_js:
   - "6.9"
 
@@ -15,7 +19,7 @@ script:
   - ng build --prod --aot
 
 after_success:
-  sshpass -p "$PASS" scp -r $USER@172.104.146.214:/var/www/iservice ./dist
+  sshpass -p "$PASS" scp -r ./dist $USER@172.104.146.214:/var/www/iservice
 
 #notifications:
 #  email:
