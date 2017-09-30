@@ -9,13 +9,13 @@ branches:
     - development
 
 before_script:
-  - npm install -g @angular/cli
+#  - npm install -g @angular/cli
 
 script:
-  - ng build --prod --aot
+#  - ng build --prod --aot
 
-#after_success:
-#  - firebase deploy --token $FIREBASE_TOKEN
+after_success:
+  - ls -la
 
 #notifications:
 #  email:
