@@ -18,8 +18,9 @@ before_script:
 script:
   - ng build --prod --aot
 
-deploy:
+after_success:
   - sshpass -p $PASS scp -r dist/* $USER@172.104.146.214:/var/www/iservice
+
 #notifications:
 #  email:
 #    on_failure: change
