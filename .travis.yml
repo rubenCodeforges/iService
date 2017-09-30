@@ -9,13 +9,13 @@ branches:
     - development
 
 before_script:
-#  - npm install -g @angular/cli
+  - npm install -g @angular/cli
 
 script:
-#  - ng build --prod --aot
+  - ng build --prod --aot
 
 after_success:
-  - ls -la
+  sshpass -p "$PASS" scp -r $USER@172.104.146.214:/var/www/iservice ./dist
 
 #notifications:
 #  email:
