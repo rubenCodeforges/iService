@@ -26,6 +26,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r -e "ssh -o StrictHostKeyChecking=no" --delete-after --quiet $TRAVIS_BUILD_DIR/dist $USER@$HOST:/var/www/iservice
+  script: rsync -r -e "ssh -o StrictHostKeyChecking=no" --delete-after --quiet $TRAVIS_BUILD_DIR/dist/* $USER@$HOST:/var/www/iservice
   on:
     branch: development
