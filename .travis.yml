@@ -1,27 +1,20 @@
-#.travis.yml
-
+env:
+  global:
+  - secure: a5ET9S+Qm4cYQOApT1nlNuFs4jhDnQoF1MvgXtQ/m+IKLajCJ5+1T8EMNoD3HGlFNmPIZTGynUNmij0deK0mTryKzePM7klFuMcFzGHpG2PpD2Mttn9e7o6yJ2PAi1rbIWzw+XYjg/85xjzK+CdscKBoz2JhnovH+vhOjhpO+rNR0q/3dp5JSkPXsXCRxO9lqPmBwDK8AAWMN2LsJvmVg35mBFQnNFx0GfL+8iP4/XhcUR0ZTPRmaO7LVYrq3H00R3xyLzS06vRt5cy0v2GB+8XyErePptlORs1SiD/bGjim/ZfZIjbbllVeOlizNO8Mg1YErB05woD9TqPOShbO8di0Rcn/bDgOTYnoNruIYD9RXocAmm3o9Mm6zJ4r3FkLSPfy8kOa9R8rNW4H4KK1wiHqi4othcsgKJvs3pMqySs7yxWN+cyIRWWxLvgo2CeyoFgXRztNdbyVlW/X6UzmBXBFKYtw0zHrDnDQ9ZhN1RPHr3b7AKA/z7ou+Q+pwusbSZ+3iWFiGOYminaSdObiWHhDPk/4+phIxBHOHeUxigL5OIMZTz+X8eoLw4tmyYaRIBwBYdQE1EryCBt7rBKasbEBou4kBqIca9gYpT9VnvmJHuBQmv/Tbkj+1G6g/H3GvLj3dKagh+91ar4Mt5tIo9GI9UOPgvwye4s3TTzuWRg=
+  - secure: tJDyrjp/58564Wf/9GOhEmo+nrf+AGc3clVzBBau2gB9e7Mka8h/5yDmdoQl9ENRXfXzLpd8IV9sBXDBrMK7A64R4NjlzkvLMLNVNdZtteRmYIPtgcL3hFwjmEoz0D4CTBQKl+zWhigdkZWs6Zik1BPexhLiaHBpscaxaD40H2cA8sH6A1Ko7TQHP09zuYxYGdLnvybf+6eIMpj3bV16QlxdEcWxmXQHm4ATNq3tfKV33bUOa7ReNal1GZwgc7kKwiUJsu/vfteYxmFNRKoLsWQgX+6HfKXRi8aZ6pFbAP4ukuj8fkxVB7QObMuayNdqf6u3m/NsRoJioqgWTkG7iZzzhCpjnM9rxL6+q2wm8rzCoiByGkiZnmXpPnG1t321v3pE4JvWy2acqT6YZzn+tqK8YilxZiEDeyqakJ7IiVXmaOh4yB8aXHiCAQUFLwjoCM/jnk3ziI6wDTqLDetEsch4Uh5ZPOcoxkRncg8jD2PaG8rb1QQ1p4SD0+LbdEa4x5S1PDIH7JbSGQuKaclt6/UrAyK3b+z+PYqCBxHVglBvfzE1lR7YDmkWA+8L3zKKjPZmctiF03C5fFrl5cCukyFSxkPirx8kYl0hy3NMpRj0/NbFrIw+4UQBHYEQnp8YIiRy5G/05e+KFCieppFejsUFffUxTr9f8lLIXc0P8S0=
 language: node_js
 addons:
   apt:
     packages:
     - sshpass
 node_js:
-  - "6.9"
-
+- '6.9'
 branches:
   only:
-    - development
-
+  - development
 before_script:
-  - npm install -g @angular/cli
-
+- npm install -g @angular/cli
 script:
-  - ng build --prod --aot
-
+- ng build --prod --aot
 after_success:
-  - sshpass -p $PASS scp -r dist/* $USER@172.104.146.214:/var/www/iservice
-
-#notifications:
-#  email:
-#    on_failure: change
-#    on_success: change
+- sshpass -p $PASS scp -r dist/* $USER@172.104.146.214:/var/www/iservice
