@@ -8,7 +8,7 @@ addons:
   apt:
     packages:
     - sshpass
-  ssh_known_hosts:
+  ssh_known_hosts: $HOST
 node_js:
 - '6.9'
 branches:
