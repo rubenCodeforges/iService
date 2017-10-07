@@ -1,23 +1,31 @@
-#.travis.yml
-
+env:
+  global:
+  - secure: a5ET9S+Qm4cYQOApT1nlNuFs4jhDnQoF1MvgXtQ/m+IKLajCJ5+1T8EMNoD3HGlFNmPIZTGynUNmij0deK0mTryKzePM7klFuMcFzGHpG2PpD2Mttn9e7o6yJ2PAi1rbIWzw+XYjg/85xjzK+CdscKBoz2JhnovH+vhOjhpO+rNR0q/3dp5JSkPXsXCRxO9lqPmBwDK8AAWMN2LsJvmVg35mBFQnNFx0GfL+8iP4/XhcUR0ZTPRmaO7LVYrq3H00R3xyLzS06vRt5cy0v2GB+8XyErePptlORs1SiD/bGjim/ZfZIjbbllVeOlizNO8Mg1YErB05woD9TqPOShbO8di0Rcn/bDgOTYnoNruIYD9RXocAmm3o9Mm6zJ4r3FkLSPfy8kOa9R8rNW4H4KK1wiHqi4othcsgKJvs3pMqySs7yxWN+cyIRWWxLvgo2CeyoFgXRztNdbyVlW/X6UzmBXBFKYtw0zHrDnDQ9ZhN1RPHr3b7AKA/z7ou+Q+pwusbSZ+3iWFiGOYminaSdObiWHhDPk/4+phIxBHOHeUxigL5OIMZTz+X8eoLw4tmyYaRIBwBYdQE1EryCBt7rBKasbEBou4kBqIca9gYpT9VnvmJHuBQmv/Tbkj+1G6g/H3GvLj3dKagh+91ar4Mt5tIo9GI9UOPgvwye4s3TTzuWRg=
+  - secure: tJDyrjp/58564Wf/9GOhEmo+nrf+AGc3clVzBBau2gB9e7Mka8h/5yDmdoQl9ENRXfXzLpd8IV9sBXDBrMK7A64R4NjlzkvLMLNVNdZtteRmYIPtgcL3hFwjmEoz0D4CTBQKl+zWhigdkZWs6Zik1BPexhLiaHBpscaxaD40H2cA8sH6A1Ko7TQHP09zuYxYGdLnvybf+6eIMpj3bV16QlxdEcWxmXQHm4ATNq3tfKV33bUOa7ReNal1GZwgc7kKwiUJsu/vfteYxmFNRKoLsWQgX+6HfKXRi8aZ6pFbAP4ukuj8fkxVB7QObMuayNdqf6u3m/NsRoJioqgWTkG7iZzzhCpjnM9rxL6+q2wm8rzCoiByGkiZnmXpPnG1t321v3pE4JvWy2acqT6YZzn+tqK8YilxZiEDeyqakJ7IiVXmaOh4yB8aXHiCAQUFLwjoCM/jnk3ziI6wDTqLDetEsch4Uh5ZPOcoxkRncg8jD2PaG8rb1QQ1p4SD0+LbdEa4x5S1PDIH7JbSGQuKaclt6/UrAyK3b+z+PYqCBxHVglBvfzE1lR7YDmkWA+8L3zKKjPZmctiF03C5fFrl5cCukyFSxkPirx8kYl0hy3NMpRj0/NbFrIw+4UQBHYEQnp8YIiRy5G/05e+KFCieppFejsUFffUxTr9f8lLIXc0P8S0=
+  - secure: UDsUvRqXWuhsYVh7LHbWGyTyBs8dRN7L8Qqaf7dWqe0AhHGQ2uIcslmwnAZP0jPa0DPJPb5T0xWw4joYatVLcsDl4XPuSQfXxi0FXuLUMlHTVSfQbmw642FJh41/BetIqMT+QKwrld04/5bZPp1WdBiYzT/WPyDTegJODmKOWcsHj8+lHGYCGgoglSHdJPnfaM62fxBNqOukL/rlEOtvq2jNMe0eMovegPYpNDVLxhhtbnVsKjBkHP1mQ+BBFj4dvmaK9P/u/hkxks7tiBNOYuEG3pKfBqjCPKzYV4C/SnbJwk6SzU5ty51aF6jltJyVtyk6t11gNaiOa4CGGZssLDRoYOwpg3/YnoEDfCNfLIgk2coqj2ufAM+SBy5ZVRs3rcNu7nbxPduEzEfABI7IytCasZChUWKhvPuGmYMweHJVKKsvWlf2i9akFcKDSt2RG9kpVGIBJpvhEhTmuiQjLTkph8wrky/rhupp8VupDWEUUVcAbuKy+AfRZgbN6UVR1UzVybI2ZHp85hb4AxOcRCNSqVn3pHctxtGWtGZsNFT9NA04dWTHsTcyjf7NOfVHjQxNghkYQ4m153maGD941Rt+VPbbR6CQtSnsKTjjorJcBYljRHobbu0XHwMz7qk0NmqTZouu2+AoH9L1QzF/QpA2zCtrS/eHYdu4TbAPSu4=
 language: node_js
+addons:
+  apt:
+    packages:
+    - sshpass
+  ssh_known_hosts: "$HOST"
 node_js:
-  - "6.9"
-
+- '6.9'
 branches:
   only:
-    - development
-
+  - development
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_66d3f186e75f_key -iv $encrypted_66d3f186e75f_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
 before_script:
-  - npm install -g @angular/cli
-
+- npm install -g @angular/cli
 script:
-  - ng build --prod --aot
-
-#after_success:
-#  - firebase deploy --token $FIREBASE_TOKEN
-
-#notifications:
-#  email:
-#    on_failure: change
-#    on_success: change
+- ng build --prod --aot
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r -e "ssh -o StrictHostKeyChecking=no" --delete-after --quiet $TRAVIS_BUILD_DIR/dist/* $USER@$HOST:/var/www/iservice
+  on:
+    branch: development
