@@ -16,6 +16,7 @@ import {ToastyModule} from "ng2-toasty";
 import {AuthService} from "./common/auth/AuthService";
 import {UserService} from "./common/user/UserService";
 import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from "ng-gapi";
+import {AuthResource} from "./common/auth/AuthResource";
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -69,7 +70,7 @@ let gapiClientConfig: NgGapiClientConfig = {
         {
             provide: APP_INITIALIZER,
             useFactory: AuthService.factory,
-            deps: [UserService],
+            deps: [UserService, AuthResource],
             multi: true
         }
     ],
