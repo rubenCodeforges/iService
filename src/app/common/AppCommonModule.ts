@@ -11,18 +11,30 @@ import {UserService} from "./user/UserService";
 import {AuthService} from "./auth/AuthService";
 import {GoBackButtonComponent} from "./navigation/GoBackButtonComponent";
 import {ToastService} from "./notification/ToastService";
+import {SideNavComponent} from "./sideNav/SideNavComponent";
+import {NavbarComponent} from "./navbar/NavbarComponent";
+import {BrowserModule} from "@angular/platform-browser";
+import {LoginComponent} from "./login/LoginComponent";
+import {AuthResource} from "./auth/AuthResource";
 
 @NgModule({
     imports: [
+        BrowserModule,
         RouterModule.forChild(AppCommonRoutes),
         TranslateModule,
     ],
     declarations: [
         GoBackButtonComponent,
+        SideNavComponent,
+        NavbarComponent,
+        LoginComponent,
         ErrorPageComponent
     ],
     exports: [
         GoBackButtonComponent,
+        SideNavComponent,
+        NavbarComponent,
+        ErrorPageComponent,
     ],
     providers: [
         CurrencyService,
@@ -30,6 +42,7 @@ import {ToastService} from "./notification/ToastService";
         RouteGuard,
         ToastService,
         UserService,
+        AuthResource,
         AuthService,
         MediaService
     ]

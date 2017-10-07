@@ -1,16 +1,19 @@
 import {Injectable} from "@angular/core";
 import {SessionUser} from "./SessionUser";
 import {UserService} from "../user/UserService";
+import {Observable} from "rxjs/Observable";
+import {AuthResource} from "./AuthResource";
 
 @Injectable()
 export class AuthService {
     public static SESSION_USER_KEY: string = 'session_user';
 
-    public static factory(userService: UserService) {
-        return () => new AuthService(userService);
+    public static factory(userService: UserService, authResource: AuthResource) {
+        return () => new AuthService(userService, authResource);
     }
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,
+                private authResource: AuthResource) {
         this.init();
     }
 
@@ -22,6 +25,10 @@ export class AuthService {
         }
     }
 
+    public signInUser(idTokenFragment: string): Observable<any> {
+        return this.authResource.signInUser(idTokenFragment.replace('id_token=', ''));
+    }
+
     private hasUserInSession(): boolean {
         return !!this.getSessionUser();
     }
@@ -29,4 +36,5 @@ export class AuthService {
     private getSessionUser(): SessionUser {
         return JSON.parse(sessionStorage.getItem(AuthService.SESSION_USER_KEY));
     }
+
 }

@@ -11,8 +11,7 @@ import {GoogleAuthService} from "ng-gapi";
 export class NavbarComponent {
     public selectedLanguage: string;
 
-    constructor(private translate: TranslateService,
-                private googleAuth: GoogleAuthService) {
+    constructor(private translate: TranslateService, private googleAuth: GoogleAuthService) {
         this.selectedLanguage = this.translate.defaultLang;
 
     }
