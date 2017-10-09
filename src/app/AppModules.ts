@@ -17,6 +17,7 @@ import {AuthService} from "./common/auth/AuthService";
 import {UserService} from "./common/user/UserService";
 import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from "ng-gapi";
 import {AuthResource} from "./common/auth/AuthResource";
+import {App} from "./config/App";
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: Http) {
 let gapiClientConfig: NgGapiClientConfig = {
     client_id: "372063809670-qoggl887ba9vpt7aclf411hhk9f7icil.apps.googleusercontent.com",
     discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
-    redirect_uri: location.origin + '/login',
+    redirect_uri: App.BASE + '/login',
     ux_mode: 'redirect',
     scope: [
         "https://www.googleapis.com/auth/analytics.readonly",
