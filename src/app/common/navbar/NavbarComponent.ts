@@ -16,15 +16,15 @@ export class NavbarComponent {
 
     }
 
-    public login() {
+    public login(): void {
         this.googleAuth.getAuth().subscribe((auth) => {
             auth.signIn().then((response) => {
-                console.log(response.getId());
+                console.log(response);
             });
-        })
+        });
     }
 
-    public changeLanguage(languageCode: string) {
+    public changeLanguage(languageCode: string): void {
         this.translate.use(languageCode);
         this.selectedLanguage = languageCode;
     }
